@@ -1,144 +1,96 @@
 subinfo_fields:
-- name: subject_id
-  type: int
-  constraints:
-    min: 101
-    max: 999
-    digits: 3
+  - name: subject_id
+    type: int
+    constraints:
+      min: 101
+      max: 999
+      digits: 3
+
 subinfo_mapping:
   subject_id: 被试编号（3位）
-  Participant Information: 被试信息
+  Participant Information: 参与者信息
   registration_failed: 注册失败
   registration_successful: 注册成功
   invalid_input: '{field} 输入无效'
+
 window:
-  size:
-  - 1280
-  - 720
+  size: [1280, 720]
   units: pix
   screen: 0
   bg_color: black
   fullscreen: false
   monitor_width_cm: 35.5
   monitor_distance_cm: 60
+
 task:
-  task_name: probabilistic_stimulus_selection
+  task_name: fixed_ratio_satiation_schedule
   save_path: ./outputs/human
   language: Chinese
   voice_name: zh-CN-YunyangNeural
   voice_enabled: false
   seed_mode: same_across_sub
-  overall_seed: 40040
+  overall_seed: 41041
   block_seed:
-  - 40040
-  - 40041
-  - 40042
-  - 40043
-  - 40044
-  - 40045
-  - 40046
-  - 40047
-  - 40048
-  - 40049
+    - 41041
+    - 41042
+    - 41043
   phase_order:
-  - learning
-  - transfer
-  total_blocks: 7
-  total_trials: 510
-  trial_per_block: 73
+    - instruction
+    - work
+    - reward
+    - satiation
+    - iti
+  total_blocks: 3
+  total_trials: 54
+  trial_per_block: 18
   conditions:
-  - train_ab
-  - train_cd
-  - train_ef
-  - test_ab
-  - test_ac
-  - test_ad
-  - test_ae
-  - test_af
-  - test_bc
-  - test_bd
-  - test_be
-  - test_bf
-  - test_cd
-  - test_ce
-  - test_cf
-  - test_de
-  - test_df
-  - test_ef
+    - fr5
+    - fr10
+    - fr20
+  condition_weights:
+    fr5: 1
+    fr10: 1
+    fr20: 1
   key_list:
-  - a
-  - l
-  - space
+    - space
+  response_key: space
   delta: 1
-  learning_conditions:
-  - train_ab
-  - train_cd
-  - train_ef
-  transfer_conditions:
-  - test_ab
-  - test_ac
-  - test_ad
-  - test_ae
-  - test_af
-  - test_bc
-  - test_bd
-  - test_be
-  - test_bf
-  - test_cd
-  - test_ce
-  - test_cf
-  - test_de
-  - test_df
-  - test_ef
-  learning_trials_per_block: 60
-  learning_trials_per_pair: 20
-  transfer_trials_total: 150
-  transfer_trials_per_pair: 10
-  learning_criteria:
-    train_ab: 0.65
-    train_cd: 0.60
-    train_ef: 0.50
-  learning_probabilities:
-    train_ab:
-      A: 0.80
-      B: 0.20
-    train_cd:
-      C: 0.70
-      D: 0.30
-    train_ef:
-      E: 0.60
-      F: 0.40
-  response_key_left: a
-  response_key_right: l
-  response_key_labels:
-    left: A
-    right: L
-  left_right_balance_policy: exact_within_block
-  symbol_role_shuffle_policy: random_per_subject
-  no_response_policy: timeout_counts_as_incorrect_on_learning
-  correct_score_delta: 1
-  incorrect_score_delta: 0
-  max_learning_blocks: 6
+  ratio_requirements:
+    fr5: 5
+    fr10: 10
+    fr20: 20
+  satiation_limit: 12
+  reward_tokens_per_completion: 1
   instruction_font: SimHei
-  symbol_font: MS Gothic
-  symbol_height_px: 200
-  symbol_x_left_px: -220
-  symbol_x_right_px: 220
+  body_font: SimHei
+  prompt_font: SimHei
+  font_size_large: 34
+  font_size_medium: 28
+  font_size_small: 24
+  prompt_y: 120
+  counter_y: 18
+  satiety_y: -84
+  reward_token_y: 26
+  reward_text_y: -118
+
 timing:
   instruction_pause_duration: 0.0
   ready_duration: 3.0
-  response_timeout: 4.0
-  feedback_duration: 1.0
-  iti_duration: 1.0
+  press_timeout: 1.2
+  reward_duration: 0.9
+  satiation_duration: 1.2
+  iti_duration: 0.8
+  block_break_duration: 3.0
+
 stimuli:
   instruction_text:
     type: text
     font: SimHei
     text: |-
-      你将看到两枚日文假名符号。
-      请按 {left_key_label} 选择左边，按 {right_key_label} 选择右边。
-      学习阶段会有“正确/错误”反馈，测试阶段没有反馈。
-      请尽量根据你认为更可能正确的符号作答。
+      你将进行一个固定比率按键任务。
+      每一轮都需要连续按空格若干次，达到要求后才能获得 1 个代币。
+      代币越多，屏幕上的饱腹指数越高。
+      请尽量稳定、快速地完成每一轮。
       按空格开始。
     color: white
     height: 28
@@ -147,74 +99,99 @@ stimuli:
     type: text
     font: SimHei
     text: |-
-      {phase_label}即将开始
+      第 {block_num}/{total_blocks} 组即将开始
       按空格继续
     color: white
     height: 30
-    wrapWidth: 980
-  iti_fixation:
+    wrapWidth: 960
+    pos: [0, 0]
+  work_prompt:
+    type: text
+    font: SimHei
+    text: |-
+      本轮固定比率要求：连续按空格 {required_presses} 次
+    color: white
+    height: 30
+    wrapWidth: 1000
+    pos: [0, 120]
+  work_counter:
+    type: text
+    font: SimHei
+    text: |-
+      已按 {current_press}/{required_presses} 次
+    color: white
+    height: 32
+    wrapWidth: 900
+    pos: [0, 20]
+  fixation:
     type: text
     font: SimHei
     text: +
     color: white
     height: 44
-  feedback_correct:
+    pos: [0, -120]
+  satiety_text:
     type: text
     font: SimHei
-    text: 正确
-    color: green
-    height: 40
-  feedback_incorrect:
+    text: |-
+      饱腹指数：{satiety_pct:.0%}
+    color: [0.9, 0.9, 0.9]
+    height: 26
+    wrapWidth: 800
+    pos: [0, -84]
+  reward_token:
+    type: circle
+    radius: 42
+    lineColor: [0.95, 0.78, 0.18]
+    fillColor: [0.95, 0.78, 0.18]
+    pos: [0, 22]
+  reward_text:
     type: text
     font: SimHei
-    text: 错误
-    color: orange
-    height: 40
+    text: |-
+      奖励已发放：+{reward_tokens} 个代币
+    color: white
+    height: 30
+    wrapWidth: 900
+    pos: [0, -118]
+  timeout_text:
+    type: text
+    font: SimHei
+    text: |-
+      本轮超时，未获得代币
+    color: [1.0, 0.7, 0.3]
+    height: 30
+    wrapWidth: 900
+    pos: [0, -118]
+  block_break:
+    type: text
+    font: SimHei
+    text: |-
+      第 {block_num}/{total_blocks} 组完成
+      完成率：{block_completion_rate:.1%}
+      平均完成用时：{mean_completion_ms:.0f} ms
+      累计代币：{total_tokens}
+
+      准备好后按空格继续
+    color: white
+    height: 26
+    wrapWidth: 980
+    pos: [0, 0]
   good_bye:
     type: text
     font: SimHei
     text: |-
       任务结束
+      总完成率：{total_completion_rate:.1%}
+      累计代币：{total_tokens}
+      平均完成用时：{mean_completion_ms:.0f} ms
+
       按空格退出
     color: white
-    height: 30
+    height: 28
     wrapWidth: 980
-  kana_1:
-    type: text
-    font: MS Gothic
-    text: あ
-    color: white
-    height: 200
-  kana_2:
-    type: text
-    font: MS Gothic
-    text: い
-    color: white
-    height: 200
-  kana_3:
-    type: text
-    font: MS Gothic
-    text: う
-    color: white
-    height: 200
-  kana_4:
-    type: text
-    font: MS Gothic
-    text: え
-    color: white
-    height: 200
-  kana_5:
-    type: text
-    font: MS Gothic
-    text: お
-    color: white
-    height: 200
-  kana_6:
-    type: text
-    font: MS Gothic
-    text: か
-    color: white
-    height: 200
+    pos: [0, 0]
+
 triggers:
   map:
     exp_onset: 1
@@ -222,49 +199,19 @@ triggers:
     block_onset: 10
     block_end: 11
     trial_onset: 20
-    response_onset: 30
-    left_response: 31
-    right_response: 32
-    timeout: 33
-    feedback_onset: 40
-    no_feedback_onset: 41
-    iti_onset: 50
+    press_onset: 21
+    press_response: 22
+    press_timeout: 23
+    reward_onset: 30
+    satiation_onset: 31
+    iti_onset: 40
   driver:
     type: serial_url
     url: loop://
     baudrate: 115200
-  timing:
-    post_delay_ms: 1
+    timeout: 1
+    prefix: [1, 225, 1, 0]
   policy:
     strict: false
-condition_generation:
-  learning_pair_order:
-  - train_ab
-  - train_cd
-  - train_ef
-  transfer_pair_order:
-  - test_ab
-  - test_ac
-  - test_ad
-  - test_ae
-  - test_af
-  - test_bc
-  - test_bd
-  - test_be
-  - test_bf
-  - test_cd
-  - test_ce
-  - test_cf
-  - test_de
-  - test_df
-  - test_ef
-  learning_trials_per_pair: 20
-  transfer_trials_per_pair: 10
-  learning_criteria:
-    train_ab: 0.65
-    train_cd: 0.60
-    train_ef: 0.50
-  max_learning_blocks: 6
-  left_right_balance_policy: exact_within_block
-  symbol_role_shuffle_policy: random_per_subject
-  no_response_policy: timeout_counts_as_incorrect_on_learning
+  timing:
+    post_delay_s: 0.001

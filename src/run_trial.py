@@ -1,16 +1,17 @@
 from __future__ import annotations
 
+import json
 from functools import partial
-import random
+from statistics import mean
 from typing import Any
 
 from psyflow import StimUnit, next_trial_id, set_trial_context
 
 from .utils import (
-    correct_role_for_pair,
-    is_learning_pair,
-    parse_pair_roles,
-    sample_learning_outcome,
+    parse_condition,
+    ratio_requirement_for_condition,
+    reward_tokens_per_completion,
+    satiety_fraction,
 )
 
 
@@ -23,55 +24,68 @@ def _get_setting(settings: Any, *names: str, default: Any = None) -> Any:
     return default
 
 
-def _condition_dict(condition: Any) -> dict[str, Any]:
+def _condition_dict(condition: Any, settings: Any) -> dict[str, Any]:
     if isinstance(condition, dict):
         data = dict(condition)
     else:
-        pair_id = str(condition or "").strip()
-        data = {"condition": pair_id, "pair_id": pair_id}
+        data = {"condition": condition}
 
-    pair_id = str(data.get("pair_id") or data.get("condition") or "").strip()
-    if not pair_id:
-        raise ValueError("trial condition is missing pair_id")
+    condition_id = parse_condition(data)
+    ratio_requirement = data.get("ratio_requirement")
+    if ratio_requirement is None:
+        ratio_requirement = ratio_requirement_for_condition(condition_id, settings)
 
-    if "condition" not in data:
-        data["condition"] = pair_id
-    data["pair_id"] = pair_id
-    data.setdefault("block_kind", "learning" if is_learning_pair(pair_id) else "transfer")
-    data.setdefault("pair_roles", list(parse_pair_roles(pair_id)))
-    return data
+    try:
+        ratio_requirement = int(ratio_requirement)
+    except Exception as exc:
+        raise ValueError(f"Invalid ratio requirement for condition {condition!r}") from exc
 
-
-def _unit_stim_id(left_symbol_id: str, right_symbol_id: str) -> str:
-    return f"{left_symbol_id}+{right_symbol_id}"
-
-
-def _response_side(response_key: str | None, left_key: str, right_key: str) -> str | None:
-    if response_key == left_key:
-        return "left"
-    if response_key == right_key:
-        return "right"
-    return None
+    return {
+        "condition": condition_id,
+        "condition_id": condition_id,
+        "ratio_requirement": ratio_requirement,
+    }
 
 
-def _choice_unit(
+def _stim_ids(ids: list[str]) -> str:
+    return "+".join(ids)
+
+
+def _make_text_unit(
     *,
     win,
     kb,
     trigger_runtime,
-    stim_bank,
     unit_label: str,
-    left_symbol_id: str,
-    right_symbol_id: str,
-    left_x: float,
-    right_x: float,
+    stim_bank,
+    stim_ids: list[str],
+    phase: str,
+    trial_id: int,
+    block_id: str,
+    condition_id: str,
+    deadline_s: float | None,
+    valid_keys: list[str],
+    task_factors: dict[str, Any],
 ):
     unit = StimUnit(unit_label, win, kb, runtime=trigger_runtime)
-    unit.add_stim(
-        stim_bank.rebuild(left_symbol_id, pos=(left_x, 0)),
-        stim_bank.rebuild(right_symbol_id, pos=(right_x, 0)),
+    set_trial_context(
+        unit,
+        trial_id=trial_id,
+        phase=phase,
+        deadline_s=deadline_s,
+        valid_keys=valid_keys,
+        block_id=block_id,
+        condition_id=condition_id,
+        task_factors=task_factors,
+        stim_id=_stim_ids(stim_ids),
     )
     return unit
+
+
+def _resolve_block_id(block_id: Any, block_num: int, block_kind: str = "block") -> str:
+    if block_id is not None:
+        return str(block_id)
+    return f"{block_kind}_{block_num:02d}"
 
 
 def run_trial(
@@ -83,248 +97,375 @@ def run_trial(
     trigger_runtime,
     block_id=None,
     block_idx=None,
-    score_total: int = 0,
+    block_seed=None,
 ):
-    """Run one probabilistic stimulus selection trial."""
+    """Run one fixed-ratio satiation trial."""
 
     trial_id = int(next_trial_id())
-    trial = _condition_dict(condition)
-    block_kind = str(trial.get("block_kind") or ("learning" if is_learning_pair(trial["pair_id"]) else "transfer")).strip().lower()
-    pair_id = str(trial["pair_id"])
-    pair_left_role, pair_right_role = parse_pair_roles(pair_id)
-    left_role = str(trial.get("left_role") or pair_left_role).upper()
-    right_role = str(trial.get("right_role") or pair_right_role).upper()
-    correct_role = trial.get("correct_role")
-    if correct_role is None and block_kind == "learning":
-        correct_role = correct_role_for_pair(pair_id)
-    correct_role = str(correct_role).upper() if correct_role is not None else None
+    trial_spec = _condition_dict(condition, settings)
+    condition_id = str(trial_spec["condition_id"])
+    ratio_requirement = int(trial_spec["ratio_requirement"])
 
-    left_symbol_id = str(trial.get("left_symbol_id") or "")
-    right_symbol_id = str(trial.get("right_symbol_id") or "")
-    if not left_symbol_id or not right_symbol_id:
-        raise ValueError(f"Trial condition {pair_id!r} is missing symbol ids.")
+    block_idx_value = int(block_idx if block_idx is not None else 0)
+    block_num_value = block_idx_value + 1
+    block_id_value = _resolve_block_id(block_id, block_num_value, "block")
 
-    block_idx_value = int(block_idx if block_idx is not None else trial.get("block_idx", 0) or 0)
-    block_num_value = int(trial.get("block_num", block_idx_value + 1) or (block_idx_value + 1))
-    pair_trial_idx = int(trial.get("pair_trial_idx", 0) or 0)
-    trial_idx = int(trial.get("trial_idx", trial_id) or trial_id)
-    block_id_value = str(block_id if block_id is not None else trial.get("block_id", f"{block_kind}_block_{block_num_value:02d}"))
-
-    left_key = str(_get_setting(settings, "response_key_left", default="a")).strip().lower()
-    right_key = str(_get_setting(settings, "response_key_right", default="l")).strip().lower()
-
-    left_x = float(_get_setting(settings, "symbol_x_left_px", default=-220))
-    right_x = float(_get_setting(settings, "symbol_x_right_px", default=220))
-    response_timeout = float(_get_setting(settings, "response_timeout", default=4.0))
-    feedback_duration = float(_get_setting(settings, "feedback_duration", default=1.0))
-    iti_duration = float(_get_setting(settings, "iti_duration", default=1.0))
-    correct_score_delta = int(_get_setting(settings, "correct_score_delta", default=1))
-    incorrect_score_delta = int(_get_setting(settings, "incorrect_score_delta", default=0))
-    learning_probabilities = dict(_get_setting(settings, "learning_probabilities", default={}) or {})
-    response_triggers = {
-        left_key: settings.triggers.get("left_response"),
-        right_key: settings.triggers.get("right_response"),
-    }
-
-    trial_seed = int(trial.get("role_assignment_seed", 0) or 0) * 1009 + block_idx_value * 97 + trial_idx * 53
-    trial_rng = random.Random(trial_seed)
-
-    learning_phase = block_kind == "learning"
-    choice_phase = f"{block_kind}_choice"
-    feedback_phase = f"{block_kind}_feedback"
-    iti_phase = f"{block_kind}_iti"
-    condition_id = pair_id
+    press_timeout = float(_get_setting(settings, "press_timeout", default=1.2))
+    reward_duration = float(_get_setting(settings, "reward_duration", default=0.9))
+    satiation_duration = float(_get_setting(settings, "satiation_duration", default=1.2))
+    iti_duration = float(_get_setting(settings, "iti_duration", default=0.8))
+    satiety_limit = int(_get_setting(settings, "satiation_limit", default=12) or 12)
+    reward_tokens = reward_tokens_per_completion(settings)
+    total_tokens_before = int(getattr(settings, "token_total", 0) or 0)
+    satiety_before = satiety_fraction(total_tokens_before, satiety_limit)
+    response_key = str(_get_setting(settings, "response_key", default="space")).strip().lower()
 
     trial_data: dict[str, Any] = {
         "trial_id": trial_id,
         "block_id": block_id_value,
         "block_idx": block_idx_value,
         "block_num": block_num_value,
-        "block_kind": block_kind,
-        "phase": block_kind,
-        "phase_kind": block_kind,
-        "condition": pair_id,
+        "condition": condition_id,
         "condition_id": condition_id,
-        "pair_id": pair_id,
-        "pair_roles": list(trial.get("pair_roles") or [pair_left_role, pair_right_role]),
-        "left_role": left_role,
-        "right_role": right_role,
-        "correct_role": correct_role,
-        "left_symbol_id": left_symbol_id,
-        "right_symbol_id": right_symbol_id,
-        "pair_trial_idx": pair_trial_idx,
-        "trial_idx": trial_idx,
-        "feedback_enabled": bool(trial.get("feedback_enabled", learning_phase)),
-        "score_total_before": int(score_total),
-        "score_total": int(score_total),
+        "ratio_requirement": ratio_requirement,
+        "presses_required": ratio_requirement,
+        "presses_completed": 0,
+        "work_timeout": False,
+        "reward_delivered": False,
+        "reward_tokens": 0,
+        "reward_tokens_before": total_tokens_before,
+        "total_tokens_before": total_tokens_before,
+        "total_tokens_after": total_tokens_before,
+        "satiety_fraction_before": satiety_before,
+        "satiety_fraction_after": satiety_before,
+        "work_completion_s": None,
+        "first_press_rt_s": None,
+        "last_press_rt_s": None,
+        "mean_press_rt_s": None,
+        "press_trace_json": "[]",
+        "response_key": response_key,
     }
 
-    make_unit = partial(StimUnit, win=win, kb=kb, runtime=trigger_runtime)
+    press_events: list[dict[str, Any]] = []
+    press_rts: list[float] = []
+    first_onset_global: float | None = None
+    last_response_global: float | None = None
+    work_timeout = False
 
-    # Choice window.
-    choice_unit = _choice_unit(
-        win=win,
-        kb=kb,
-        trigger_runtime=trigger_runtime,
-        stim_bank=stim_bank,
-        unit_label=choice_phase,
-        left_symbol_id=left_symbol_id,
-        right_symbol_id=right_symbol_id,
-        left_x=left_x,
-        right_x=right_x,
-    )
-    correct_key = None
-    if learning_phase and correct_role is not None:
-        correct_key = left_key if left_role == correct_role else right_key
-
-    set_trial_context(
-        choice_unit,
-        trial_id=trial_id,
-        phase=choice_phase,
-        deadline_s=response_timeout,
-        valid_keys=[left_key, right_key],
-        block_id=block_id_value,
-        condition_id=condition_id,
-        task_factors={
-            "stage": choice_phase,
-            "block_kind": block_kind,
-            "block_idx": block_idx_value,
-            "block_num": block_num_value,
-            "trial_idx": trial_idx,
-            "pair_id": pair_id,
-            "left_role": left_role,
-            "right_role": right_role,
-            "correct_role": correct_role,
-            "feedback_enabled": learning_phase,
-            "left_symbol_id": left_symbol_id,
-            "right_symbol_id": right_symbol_id,
-            "response_timeout": response_timeout,
-        },
-        stim_id=_unit_stim_id(left_symbol_id, right_symbol_id),
-    )
-    choice_unit.capture_response(
-        keys=[left_key, right_key],
-        correct_keys=[correct_key] if correct_key is not None else [],
-        duration=response_timeout,
-        onset_trigger=settings.triggers.get("trial_onset"),
-        response_trigger=response_triggers,
-        timeout_trigger=settings.triggers.get("timeout"),
-        terminate_on_response=True,
-    ).to_dict(trial_data)
-
-    response_key = choice_unit.get_state("response", None)
-    response_key = str(response_key).strip().lower() if response_key is not None else None
-    response_rt = choice_unit.get_state("rt", None)
-    response_rt_value = float(response_rt) if isinstance(response_rt, (int, float)) else None
-    response_side = _response_side(response_key, left_key, right_key)
-    selected_role = left_role if response_side == "left" else right_role if response_side == "right" else None
-    choice_timeout = response_side is None
-    response_correct = bool(choice_unit.get_state("hit", False)) if learning_phase else None
-
-    trial_data.update(
-        {
-            "response_key": response_key or "",
-            "response_side": response_side,
-            "selected_role": selected_role,
-            "chosen_role": selected_role,
-            "choice_timeout": choice_timeout,
-            "choice_forced": choice_timeout,
-            "response_rt": response_rt_value,
-            "choice_rt": response_rt_value,
-            "response_correct": response_correct,
-            "choice_correct": response_correct,
-        }
-    )
-
-    feedback_win = None
-    reward_probability = None
-    score_delta = 0
-    feedback_stim_id = None
-    score_total_after = int(score_total)
-
-    if learning_phase:
-        if selected_role is not None:
-            feedback_win, reward_probability = sample_learning_outcome(
-                pair_id,
-                selected_role,
-                learning_probabilities,
-                trial_rng,
-            )
-        else:
-            feedback_win = False
-            reward_probability = 0.0
-
-        score_delta = correct_score_delta if feedback_win else incorrect_score_delta
-        score_total_after = int(score_total) + int(score_delta)
-        feedback_stim_id = "feedback_correct" if feedback_win else "feedback_incorrect"
-        feedback_unit = make_unit(feedback_phase).add_stim(stim_bank.get(feedback_stim_id))
-        set_trial_context(
-            feedback_unit,
-            trial_id=trial_id,
-            phase=feedback_phase,
-            deadline_s=feedback_duration,
-            valid_keys=[],
-            block_id=block_id_value,
-            condition_id=condition_id,
-            task_factors={
-                "stage": feedback_phase,
-                "block_kind": block_kind,
-                "block_idx": block_idx_value,
-                "block_num": block_num_value,
-                "trial_idx": trial_idx,
-                "pair_id": pair_id,
-                "selected_role": selected_role,
-                "correct_role": correct_role,
-                "choice_correct": response_correct,
-                "feedback_win": feedback_win,
-                "reward_probability": reward_probability,
-                "score_delta": score_delta,
-                "score_total": score_total_after,
-            },
-            stim_id=feedback_stim_id,
+    work_preview_duration = min(0.6, press_timeout)
+    work_preview = StimUnit("work_preview", win, kb, runtime=trigger_runtime)
+    work_preview.add_stim(
+        stim_bank.get_and_format(
+            "work_prompt",
+            required_presses=ratio_requirement,
         )
-        feedback_unit.show(duration=feedback_duration, onset_trigger=settings.triggers.get("feedback_onset")).to_dict(trial_data)
-    else:
-        trial_data.update(
-            {
-                "feedback_win": None,
-                "reward_probability": None,
-                "score_delta": 0,
-                "feedback_stim_id": None,
-            }
-        )
-
-    trial_data.update(
-        {
-            "feedback_win": feedback_win,
-            "reward_probability": reward_probability,
-            "score_delta": int(score_delta),
-            "feedback_stim_id": feedback_stim_id,
-            "score_total": int(score_total_after),
-        }
     )
-
-    iti = make_unit(iti_phase).add_stim(stim_bank.get("iti_fixation"))
+    work_preview.add_stim(
+        stim_bank.get_and_format(
+            "work_counter",
+            current_press=0,
+            required_presses=ratio_requirement,
+        )
+    )
+    work_preview.add_stim(
+        stim_bank.get_and_format(
+            "satiety_text",
+            satiety_pct=satiety_before,
+        )
+    )
+    work_preview.add_stim(stim_bank.get("fixation"))
     set_trial_context(
-        iti,
+        work_preview,
         trial_id=trial_id,
-        phase=iti_phase,
-        deadline_s=iti_duration,
+        phase="work_preview",
+        deadline_s=work_preview_duration,
         valid_keys=[],
         block_id=block_id_value,
         condition_id=condition_id,
         task_factors={
-            "stage": iti_phase,
-            "block_kind": block_kind,
+            "stage": "work_preview",
+            "condition": condition_id,
+            "ratio_requirement": ratio_requirement,
+            "token_total_before": total_tokens_before,
+            "satiety_fraction_before": satiety_before,
             "block_idx": block_idx_value,
             "block_num": block_num_value,
-            "trial_idx": trial_idx,
-            "pair_id": pair_id,
-            "score_total": score_total_after,
         },
-        stim_id="iti_fixation",
+        stim_id="work_prompt+work_counter+satiety_text+fixation",
     )
-    iti.show(duration=iti_duration, onset_trigger=settings.triggers.get("iti_onset")).to_dict(trial_data)
+    work_preview.show(duration=work_preview_duration, onset_trigger=settings.triggers.get("trial_onset"))
+
+    for press_index in range(1, ratio_requirement + 1):
+        completed_before = press_index - 1
+        press_phase = "work_press"
+        press_unit_label = f"work_press_{press_index:02d}"
+        press_unit = _make_text_unit(
+            win=win,
+            kb=kb,
+            trigger_runtime=trigger_runtime,
+            unit_label=press_unit_label,
+            stim_bank=stim_bank,
+            stim_ids=["work_prompt", "work_counter", "satiety_text", "fixation"],
+            phase=press_phase,
+            trial_id=trial_id,
+            block_id=block_id_value,
+            condition_id=condition_id,
+            deadline_s=press_timeout,
+            valid_keys=[response_key],
+            task_factors={
+                "stage": press_phase,
+                "condition": condition_id,
+                "ratio_requirement": ratio_requirement,
+                "press_index": press_index,
+                "presses_completed_before": completed_before,
+                "presses_remaining": ratio_requirement - completed_before,
+                "token_total_before": total_tokens_before,
+                "satiety_fraction_before": satiety_before,
+                "block_idx": block_idx_value,
+                "block_num": block_num_value,
+            },
+        )
+        press_unit.add_stim(
+            stim_bank.get_and_format(
+                "work_prompt",
+                required_presses=ratio_requirement,
+            )
+        )
+        press_unit.add_stim(
+            stim_bank.get_and_format(
+                "work_counter",
+                current_press=completed_before,
+                required_presses=ratio_requirement,
+            )
+        )
+        press_unit.add_stim(
+            stim_bank.get_and_format(
+                "satiety_text",
+                satiety_pct=satiety_before,
+            )
+        )
+        press_unit.add_stim(stim_bank.get("fixation"))
+
+        press_unit.capture_response(
+            keys=[response_key],
+            duration=press_timeout,
+            onset_trigger=settings.triggers.get("press_onset"),
+            response_trigger=settings.triggers.get("press_response"),
+            timeout_trigger=settings.triggers.get("press_timeout"),
+            correct_keys=[response_key],
+            terminate_on_response=True,
+        )
+
+        onset_global = press_unit.get_state("onset_time_global", None)
+        if first_onset_global is None and isinstance(onset_global, (int, float)):
+            first_onset_global = float(onset_global)
+
+        response_key_pressed = press_unit.get_state("response", None)
+        response_rt = press_unit.get_state("rt", None)
+        response_time_global = press_unit.get_state("response_time_global", None)
+        response_hit = bool(press_unit.get_state("hit", False))
+
+        if response_hit:
+            try:
+                press_rts.append(float(response_rt))
+            except Exception:
+                pass
+            if isinstance(response_time_global, (int, float)):
+                last_response_global = float(response_time_global)
+            press_events.append(
+                {
+                    "press_index": press_index,
+                    "response": str(response_key_pressed or ""),
+                    "rt_s": float(response_rt) if isinstance(response_rt, (int, float)) else None,
+                    "hit": True,
+                    "timed_out": False,
+                }
+            )
+            trial_data["presses_completed"] = press_index
+            continue
+
+        work_timeout = True
+        press_events.append(
+            {
+                "press_index": press_index,
+                "response": str(response_key_pressed or ""),
+                "rt_s": float(response_rt) if isinstance(response_rt, (int, float)) else None,
+                "hit": False,
+                "timed_out": True,
+            }
+        )
+        break
+
+    reward_delivered = False
+    total_tokens_after = total_tokens_before
+    satiety_after = satiety_before
+
+    if not work_timeout and trial_data["presses_completed"] >= ratio_requirement:
+        reward_delivered = True
+        total_tokens_after = total_tokens_before + reward_tokens
+        satiety_after = satiety_fraction(total_tokens_after, satiety_limit)
+        settings.token_total = total_tokens_after
+
+        work_completion_s = None
+        if first_onset_global is not None and last_response_global is not None:
+            work_completion_s = max(0.0, float(last_response_global) - float(first_onset_global))
+
+        trial_data.update(
+            {
+                "work_completion_s": work_completion_s,
+                "reward_delivered": True,
+                "reward_tokens": reward_tokens,
+                "total_tokens_after": total_tokens_after,
+                "satiety_fraction_after": satiety_after,
+                "first_press_rt_s": press_rts[0] if press_rts else None,
+                "last_press_rt_s": press_rts[-1] if press_rts else None,
+                "mean_press_rt_s": mean(press_rts) if press_rts else None,
+            }
+        )
+
+        reward_unit = _make_text_unit(
+            win=win,
+            kb=kb,
+            trigger_runtime=trigger_runtime,
+            unit_label="reward_delivery",
+            stim_bank=stim_bank,
+            stim_ids=["reward_text", "reward_token", "satiety_text"],
+            phase="reward_delivery",
+            trial_id=trial_id,
+            block_id=block_id_value,
+            condition_id=condition_id,
+            deadline_s=reward_duration,
+            valid_keys=[],
+            task_factors={
+                "stage": "reward_delivery",
+                "condition": condition_id,
+                "ratio_requirement": ratio_requirement,
+                "reward_tokens": reward_tokens,
+                "token_total_before": total_tokens_before,
+                "token_total_after": total_tokens_after,
+                "satiety_fraction_after": satiety_after,
+            },
+        )
+        reward_unit.add_stim(
+            stim_bank.get_and_format(
+                "reward_text",
+                reward_tokens=reward_tokens,
+            )
+        )
+        reward_unit.add_stim(stim_bank.get("reward_token"))
+        reward_unit.add_stim(
+            stim_bank.get_and_format(
+                "satiety_text",
+                satiety_pct=satiety_after,
+            )
+        )
+        reward_unit.show(duration=reward_duration, onset_trigger=settings.triggers.get("reward_onset"))
+
+        satiation_unit = _make_text_unit(
+            win=win,
+            kb=kb,
+            trigger_runtime=trigger_runtime,
+            unit_label="satiation_pause",
+            stim_bank=stim_bank,
+            stim_ids=["satiety_text", "fixation"],
+            phase="satiation_pause",
+            trial_id=trial_id,
+            block_id=block_id_value,
+            condition_id=condition_id,
+            deadline_s=satiation_duration,
+            valid_keys=[],
+            task_factors={
+                "stage": "satiation_pause",
+                "condition": condition_id,
+                "ratio_requirement": ratio_requirement,
+                "token_total_after": total_tokens_after,
+                "satiety_fraction_after": satiety_after,
+            },
+        )
+        satiation_unit.add_stim(
+            stim_bank.get_and_format(
+                "satiety_text",
+                satiety_pct=satiety_after,
+            )
+        )
+        satiation_unit.add_stim(stim_bank.get("fixation"))
+        satiation_unit.show(duration=satiation_duration, onset_trigger=settings.triggers.get("satiation_onset"))
+    else:
+        trial_data.update(
+            {
+                "work_timeout": True,
+                "reward_delivered": False,
+                "reward_tokens": 0,
+                "total_tokens_after": total_tokens_after,
+                "satiety_fraction_after": satiety_after,
+                "first_press_rt_s": press_rts[0] if press_rts else None,
+                "last_press_rt_s": press_rts[-1] if press_rts else None,
+                "mean_press_rt_s": mean(press_rts) if press_rts else None,
+            }
+        )
+        timeout_unit = _make_text_unit(
+            win=win,
+            kb=kb,
+            trigger_runtime=trigger_runtime,
+            unit_label="timeout_feedback",
+            stim_bank=stim_bank,
+            stim_ids=["timeout_text", "fixation"],
+            phase="timeout_feedback",
+            trial_id=trial_id,
+            block_id=block_id_value,
+            condition_id=condition_id,
+            deadline_s=reward_duration,
+            valid_keys=[],
+            task_factors={
+                "stage": "timeout_feedback",
+                "condition": condition_id,
+                "ratio_requirement": ratio_requirement,
+                "presses_completed": trial_data["presses_completed"],
+                "token_total_after": total_tokens_after,
+            },
+        )
+        timeout_unit.add_stim(stim_bank.get("timeout_text"))
+        timeout_unit.add_stim(stim_bank.get("fixation"))
+        timeout_unit.show(duration=reward_duration)
+
+    iti_unit = _make_text_unit(
+        win=win,
+        kb=kb,
+        trigger_runtime=trigger_runtime,
+        unit_label="iti",
+        stim_bank=stim_bank,
+        stim_ids=["fixation"],
+        phase="iti",
+        trial_id=trial_id,
+        block_id=block_id_value,
+        condition_id=condition_id,
+        deadline_s=iti_duration,
+        valid_keys=[],
+        task_factors={
+            "stage": "iti",
+            "condition": condition_id,
+            "ratio_requirement": ratio_requirement,
+            "presses_completed": trial_data["presses_completed"],
+            "token_total_after": total_tokens_after,
+        },
+    )
+    iti_unit.add_stim(stim_bank.get("fixation"))
+    iti_unit.show(duration=iti_duration, onset_trigger=settings.triggers.get("iti_onset"))
+
+    trial_data.update(
+        {
+            "press_trace_json": json.dumps(press_events, ensure_ascii=False),
+            "work_timeout": work_timeout,
+            "reward_delivered": reward_delivered,
+            "reward_tokens": reward_tokens if reward_delivered else 0,
+            "total_tokens_before": total_tokens_before,
+            "total_tokens_after": total_tokens_after,
+            "satiety_fraction_before": satiety_before,
+            "satiety_fraction_after": satiety_after,
+            "work_completion_s": trial_data.get("work_completion_s"),
+            "presses_completed": int(trial_data.get("presses_completed", 0)),
+        }
+    )
 
     return trial_data
 

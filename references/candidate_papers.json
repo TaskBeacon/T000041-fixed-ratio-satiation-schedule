@@ -1,16 +1,17 @@
 [
   {
-    "id": "W2027916800",
-    "title": "Dopaminergic Genes Predict Individual Differences in Susceptibility to Confirmation Bias",
+    "id": "W2030729507",
+    "title": "DETERMINATION OF DISCOUNT FUNCTIONS IN RATS WITH AN ADJUSTING\u2010AMOUNT PROCEDURE",
     "authors": [
-      "Bradley B. Doll",
-      "Kent E. Hutchison",
-      "Michael J. Frank"
+      "Jerry B. Richards",
+      "Suzanne H. Mitchell",
+      "Harriet de Wit",
+      "Lewis S. Seiden"
     ],
-    "year": 2011,
-    "journal": "Journal of Neuroscience",
-    "doi_or_url": "https://doi.org/10.1523/jneurosci.6486-10.2011",
-    "citation_count": 194,
+    "year": 1997,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1997.67-353",
+    "citation_count": 493,
     "is_high_impact": false,
     "open_access": true,
     "used_for": [
@@ -21,18 +22,1024 @@
     "notes": ""
   },
   {
-    "id": "W2419503723",
-    "title": "Variability in Dopamine Genes Dissociates Model-Based and Model-Free Reinforcement Learning",
+    "id": "W1605427252",
+    "title": "Fos Protein Expression and Cocaine-Seeking Behavior in Rats after Exposure to a Cocaine Self-Administration Environment",
     "authors": [
-      "Bradley B. Doll",
-      "Kevin G. Bath",
-      "Nathaniel D. Daw",
-      "Michael J. Frank"
+      "Janet L. Neisewander",
+      "David L. Baker",
+      "Rita A. Fuchs",
+      "Ly T.L. Tran-Nguyen",
+      "Andrew Palmer",
+      "John F. Marshall"
+    ],
+    "year": 2000,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.20-02-00798.2000",
+    "citation_count": 444,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1963557453",
+    "title": "Pharmacological Evidence for a Motivational Role of \u03ba-Opioid Systems in Ethanol Dependence",
+    "authors": [
+      "Brendan M. Walker",
+      "George F. Koob"
+    ],
+    "year": 2007,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1301438",
+    "citation_count": 395,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2077496630",
+    "title": "The Glucagon-Like Peptide 1 (GLP-1) Analogue, Exendin-4, Decreases the Rewarding Value of Food: A New Role for Mesolimbic GLP-1 Receptors",
+    "authors": [
+      "Suzanne L. Dickson",
+      "Rozita H. Shirazi",
+      "Caroline Hansson",
+      "Filip Bergquist",
+      "Hans Nissbrandt",
+      "Karolina P. Skibicka"
+    ],
+    "year": 2012,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.6326-11.2012",
+    "citation_count": 391,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1967722381",
+    "title": "ALTERNATIVE REINFORCEMENT INCREASES RESISTANCE TO CHANGE: PAVLOVIAN OR OPERANT CONTINGENCIES?",
+    "authors": [
+      "John A. Nevin",
+      "Mary E. Tota",
+      "Richard D. Torquato",
+      "Richard L. Shull"
+    ],
+    "year": 1990,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1990.53-359",
+    "citation_count": 314,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1999653003",
+    "title": "AN INTEGRATIVE MODEL FOR THE STUDY OF BEHAVIORAL MOMENTUM",
+    "authors": [
+      "John A. Nevin"
+    ],
+    "year": 1992,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1992.57-301",
+    "citation_count": 304,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1964952275",
+    "title": "Shift from Goal-Directed to Habitual Cocaine Seeking after Prolonged Experience in Rats",
+    "authors": [
+      "A. Zapata",
+      "Vicki L. Minney",
+      "Toni S. Shippenberg"
+    ],
+    "year": 2010,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.4072-10.2010",
+    "citation_count": 294,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2160531011",
+    "title": "Time-Dependent Changes in Cocaine-Seeking Behavior and Extracellular Dopamine Levels in the Amygdala during Cocaine Withdrawal",
+    "authors": [
+      "Ly T.L. Tran-Nguyen"
+    ],
+    "year": 1998,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1016/s0893-133x(97)00205-4",
+    "citation_count": 285,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2038120147",
+    "title": "Conditioned Withdrawal Drives Heroin Consumption and Decreases Reward Sensitivity",
+    "authors": [
+      "Paul J. Kenny",
+      "Scott A. Chen",
+      "Osamu Kitamura",
+      "Athina Markou",
+      "George F. Koob"
+    ],
+    "year": 2006,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.0740-06.2006",
+    "citation_count": 269,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1552965236",
+    "title": "Role of ghrelin in food reward: impact of ghrelin on sucrose self\u2010administration and mesolimbic dopamine and acetylcholine receptor gene expression",
+    "authors": [
+      "Karolina P. Skibicka",
+      "Caroline Hansson",
+      "Emil Egecioglu",
+      "Suzanne L. Dickson"
+    ],
+    "year": 2011,
+    "journal": "Addiction Biology",
+    "doi_or_url": "https://doi.org/10.1111/j.1369-1600.2010.00294.x",
+    "citation_count": 250,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2164961539",
+    "title": "Dopamine Modulates Reward-Related Vigor",
+    "authors": [
+      "Ulrik Beierholm",
+      "Marc Guitart\u2010Masip",
+      "Marcos Economides",
+      "Rumana Chowdhury",
+      "Emrah D\u00fczel",
+      "Raymond J. Dolan",
+      "Peter Dayan"
+    ],
+    "year": 2013,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2013.48",
+    "citation_count": 237,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2785310965",
+    "title": "Shifting the balance between goals and habits: Five failures in experimental habit induction.",
+    "authors": [
+      "Sanne de Wit",
+      "Merel Kindt",
+      "Sarah L. Knot",
+      "Aukje Verhoeven",
+      "Trevor W. Robbins",
+      "J\u00falia Gasull-Cam\u00f3s",
+      "M. Blair Evans",
+      "Hira Mirza",
+      "Claire M. Gillan"
+    ],
+    "year": 2018,
+    "journal": "Journal of Experimental Psychology General",
+    "doi_or_url": "https://doi.org/10.1037/xge0000402",
+    "citation_count": 232,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2145962539",
+    "title": "EVALUATION OF CLIENT PREFERENCE FOR FUNCTION\u2010BASED TREATMENT PACKAGES",
+    "authors": [
+      "Gregory P. Hanley",
+      "Cathleen C. Piazza",
+      "Wayne W. Fisher",
+      "Stephanie A. Contrucci",
+      "Kristen A. Maglieri"
+    ],
+    "year": 1997,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1997.30-459",
+    "citation_count": 219,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2002961865",
+    "title": "Differential Involvement of the Basolateral Amygdala and Mediodorsal Thalamus in Instrumental Action Selection",
+    "authors": [
+      "Sean B. Ostlund",
+      "Bernard W. Balleine"
+    ],
+    "year": 2008,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.5472-07.2008",
+    "citation_count": 198,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1578111329",
+    "title": "Neural integrative activities of nucleus accumbens subregions in relation to learning and motivation",
+    "authors": [
+      "Ann E. Kelley"
+    ],
+    "year": 1999,
+    "journal": "Psychobiology",
+    "doi_or_url": "https://doi.org/10.3758/bf03332114",
+    "citation_count": 198,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2105199900",
+    "title": "THE SUBSTITUTABILITY OF REINFORCERS",
+    "authors": [
+      "Leonard Green",
+      "Debra E. Freed"
+    ],
+    "year": 1993,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1993.60-141",
+    "citation_count": 192,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W336363813",
+    "title": "Conditioned Reinforcement: Experimental and Theoretical Issues",
+    "authors": [
+      "Ben A. Williams"
+    ],
+    "year": 1994,
+    "journal": "The Behavior Analyst",
+    "doi_or_url": "https://doi.org/10.1007/bf03392675",
+    "citation_count": 189,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1969351614",
+    "title": "The role of incentive learning in instrumental outcome revaluation by sensory-specific satiety",
+    "authors": [
+      "Bernard W. Balleine",
+      "Anthony Dickinson"
+    ],
+    "year": 1998,
+    "journal": "Animal Learning & Behavior",
+    "doi_or_url": "https://doi.org/10.3758/bf03199161",
+    "citation_count": 188,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2005921391",
+    "title": "Cocaine Is Low on the Value Ladder of Rats: Possible Evidence for Resilience to Addiction",
+    "authors": [
+      "Lauriane Cantin",
+      "Magalie Lenoir",
+      "Eric Augier",
+      "Nathalie Vanhille",
+      "Sarah Dubreucq",
+      "Fuschia Serre",
+      "Caroline Vouillac\u2010Mendoza",
+      "Serge H. Ahmed"
+    ],
+    "year": 2010,
+    "journal": "PLoS ONE",
+    "doi_or_url": "https://doi.org/10.1371/journal.pone.0011592",
+    "citation_count": 185,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2167077741",
+    "title": "ESTABLISHING OPERATIONS AND REINFORCEMENT EFFECTS",
+    "authors": [
+      "Timothy R. Vollmer",
+      "Brian A. Iwata"
+    ],
+    "year": 1991,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1991.24-279",
+    "citation_count": 184,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1972482412",
+    "title": "TECHNIQUES FOR ESTABLISHING SCHEDULES WITH WHEEL RUNNING AS REINFORCEMENT IN RATS",
+    "authors": [
+      "Iver H. Iversen"
+    ],
+    "year": 1993,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1993.60-219",
+    "citation_count": 182,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2078995190",
+    "title": "Chronic Cocaine-Induced H3 Acetylation and Transcriptional Activation of CaMKII\u03b1 in the Nucleus Accumbens Is Critical for Motivation for Drug Reinforcement",
+    "authors": [
+      "Lei Wang",
+      "Zhigang Lv",
+      "Zhaoyang Hu",
+      "Jian Sheng",
+      "Bin Hui",
+      "Jie Sun",
+      "Lan Ma"
+    ],
+    "year": 2009,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2009.193",
+    "citation_count": 177,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2029549266",
+    "title": "Hippocampal GLP-1 Receptors Influence Food Intake, Meal Size, and Effort-Based Responding for Food through Volume Transmission",
+    "authors": [
+      "Ted M. Hsu",
+      "Joel D. Hahn",
+      "Vaibhav Konanur",
+      "Ashley Lam",
+      "Scott E. Kanoski"
+    ],
+    "year": 2014,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2014.175",
+    "citation_count": 172,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2089482332",
+    "title": "Extended Access to Cocaine Self-Administration Produces Long-Lasting Prefrontal Cortex-Dependent Working Memory Impairments",
+    "authors": [
+      "Olivier George",
+      "Chitra D. Mandyam",
+      "Sunmee Wee",
+      "George F. Koob"
+    ],
+    "year": 2007,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1301626",
+    "citation_count": 165,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2018105956",
+    "title": "ANTECEDENT INFLUENCES ON BEHAVIOR DISORDERS",
+    "authors": [
+      "Richard G. Smith",
+      "Brian A. Iwata"
+    ],
+    "year": 1997,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1997.30-343",
+    "citation_count": 164,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2150391204",
+    "title": "DIFFERENTIAL REINFORCEMENT OF ALTERNATIVE BEHAVIOR INCREASES RESISTANCE TO EXTINCTION: CLINICAL DEMONSTRATION, ANIMAL MODELING, AND CLINICAL TEST OF ONE SOLUTION",
+    "authors": [
+      "F. Charles Mace",
+      "Jennifer J. McComas",
+      "Benjamin C. Mauro",
+      "Patrick R. Progar",
+      "Bridget A. Taylor",
+      "Ruth A. Ervin",
+      "Amanda N. Zangrillo"
+    ],
+    "year": 2010,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2010.93-349",
+    "citation_count": 162,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2103018978",
+    "title": "Enhanced Food-Related Motivation after Bilateral Lesions of the Subthalamic Nucleus",
+    "authors": [
+      "Christelle Baunez",
+      "Marianne Amalric",
+      "Trevor W. Robbins"
+    ],
+    "year": 2002,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.22-02-00562.2002",
+    "citation_count": 157,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2091780073",
+    "title": "Gamification: The Intersection between Behavior Analysis and Game Design Technologies",
+    "authors": [
+      "Zachary H. Morford",
+      "Benjamin N. Witts",
+      "Kenneth Killingsworth",
+      "Mark P. Alavosius"
+    ],
+    "year": 2014,
+    "journal": "The Behavior Analyst",
+    "doi_or_url": "https://doi.org/10.1007/s40614-014-0006-1",
+    "citation_count": 155,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1980196077",
+    "title": "Dopamine Antagonism Decreases Willingness to Expend Physical, But Not Cognitive, Effort: A Comparison of Two Rodent Cost/Benefit Decision-Making Tasks",
+    "authors": [
+      "Jay G. Hosking",
+      "Stan Floresco",
+      "Catharine A. Winstanley"
+    ],
+    "year": 2014,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2014.285",
+    "citation_count": 155,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2168128112",
+    "title": "The Novel Cannabinoid CB1 Receptor Neutral Antagonist AM4113 Suppresses Food Intake and Food-Reinforced Behavior but Does not Induce Signs of Nausea in Rats",
+    "authors": [
+      "Kelly S. Sink",
+      "Peter McLaughlin",
+      "Jodi Wood",
+      "C. Brown",
+      "Pusheng Fan",
+      "Kiran Vemuri",
+      "Yan Pang",
+      "Teresa Olzewska",
+      "Ganesh A. Thakur",
+      "A. Makriyannis",
+      "Linda A. Parker",
+      "John D. Salamone"
+    ],
+    "year": 2007,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1301476",
+    "citation_count": 155,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1979959821",
+    "title": "Hippocampal Leptin Signaling Reduces Food Intake and Modulates Food-Related Memory Processing",
+    "authors": [
+      "Scott E. Kanoski",
+      "Matthew R. Hayes",
+      "Holly Greenwald",
+      "Samantha M. Fortin",
+      "Carol A. Gianessi",
+      "Jennifer R Gilbert",
+      "Harvey J. Grill"
+    ],
+    "year": 2011,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2011.70",
+    "citation_count": 154,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1542165206",
+    "title": "Aggression Escalated by Social Instigation or by Discontinuation of Reinforcement (\u201cFrustration\u201d) in Mice Inhibition by Anpirtoline: A 5-HT1B Receptor Agonist",
+    "authors": [
+      "R de Almeida"
+    ],
+    "year": 2002,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1016/s0893-133x(02)00291-9",
+    "citation_count": 152,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2070532232",
+    "title": "Activation of the GLP-1 Receptors in the Nucleus of the Solitary Tract Reduces Food Reward Behavior and Targets the Mesolimbic System",
+    "authors": [
+      "Jennifer E. Richard",
+      "Rozita H. Anderberg",
+      "Andreas G\u00f6teson",
+      "Fiona M. Gribble",
+      "Frank Reimann",
+      "Karolina P. Skibicka"
+    ],
+    "year": 2015,
+    "journal": "PLoS ONE",
+    "doi_or_url": "https://doi.org/10.1371/journal.pone.0119034",
+    "citation_count": 152,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1974228627",
+    "title": "The 5-HT2C Receptor Agonist Lorcaserin Reduces Nicotine Self-Administration, Discrimination, and Reinstatement: Relationship to Feeding Behavior and Impulse Control",
+    "authors": [
+      "Guy A. Higgins",
+      "Leo B. Silenieks",
+      "Anne Rossmann",
+      "Zo\u00eb Rizos",
+      "Kevin Noble",
+      "Ashlie D. Soko",
+      "Paul Fletcher"
+    ],
+    "year": 2011,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2011.303",
+    "citation_count": 150,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2033519360",
+    "title": "Cocaine-Induced Reinstatement Requires Endogenous Stimulation of \u03bc-Opioid Receptors in the Ventral Pallidum",
+    "authors": [
+      "Xingchun Tang",
+      "Krista McFarland",
+      "Stephanie Cagle",
+      "Peter W. Kalivas"
+    ],
+    "year": 2005,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.0685-05.2005",
+    "citation_count": 149,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2006926071",
+    "title": "RUNNING AND RESPONDING REINFORCED BY THE OPPORTUNITY TO RUN: EFFECT OF REINFORCER DURATION",
+    "authors": [
+      "Terry W. Belke"
+    ],
+    "year": 1997,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1997.67-337",
+    "citation_count": 145,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2145684123",
+    "title": "RELATIVE VERSUS ABSOLUTE REINFORCEMENT EFFECTS: IMPLICATIONS FOR PREFERENCE ASSESSMENTS",
+    "authors": [
+      "Eileen M. Roscoe",
+      "Brian A. Iwata",
+      "SungWoo Kahng"
+    ],
+    "year": 1999,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1999.32-479",
+    "citation_count": 144,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2073003441",
+    "title": "Hyperlipidemic Diet Causes Loss of Olfactory Sensory Neurons, Reduces Olfactory Discrimination, and Disrupts Odor-Reversal Learning",
+    "authors": [
+      "Nicolas Thiebaud",
+      "Melissa Cavallin Johnson",
+      "Jessica L. Butler",
+      "Genevieve A. Bell",
+      "Kassandra L. Ferguson",
+      "Andrew R Fadool",
+      "James C. Fadool",
+      "Alana M. Gale",
+      "David S. Gale",
+      "Debra Ann Fadool"
+    ],
+    "year": 2014,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.3366-13.2014",
+    "citation_count": 144,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2051022103",
+    "title": "The Basolateral Amygdala Is Critical to the Expression of Pavlovian and Instrumental Outcome-Specific Reinforcer Devaluation Effects",
+    "authors": [
+      "Alexander W. Johnson",
+      "Michela Gallagher",
+      "Peter C. Holland"
+    ],
+    "year": 2009,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.3758-08.2009",
+    "citation_count": 143,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2037578646",
+    "title": "RESPONSE RATE VIEWED AS ENGAGEMENT BOUTS: EFFECTS OF RELATIVE REINFORCEMENT AND SCHEDULE TYPE",
+    "authors": [
+      "Richard L. Shull",
+      "Scott T. Gaynor",
+      "Julie A. Grimes"
+    ],
+    "year": 2001,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2001.75-247",
+    "citation_count": 143,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2101946253",
+    "title": "Selective reward deficit in mice lacking beta-endorphin and enkephalin.",
+    "authors": [
+      "Michael D. Hayward",
+      "John E. Pintar",
+      "Malcolm J. Low"
+    ],
+    "year": 2002,
+    "journal": "PubMed",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.22-18-08251.2002",
+    "citation_count": 134,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2209208567",
+    "title": "Glucagon-Like Peptide-1 Receptor Activation in the Ventral Tegmental Area Decreases the Reinforcing Efficacy of Cocaine",
+    "authors": [
+      "Heath D. Schmidt",
+      "Elizabeth G. Mietlicki\u2010Baase",
+      "Kelsey Y. Ige",
+      "John Maurer",
+      "David J. Reiner",
+      "Derek J. Zimmer",
+      "Duncan S. Van Nest",
+      "Leonardo A. Guercio",
+      "Mathieu E. Wimmer",
+      "Diana R. Olivos",
+      "Bart C. De Jonghe",
+      "Matthew R. Hayes"
+    ],
+    "year": 2015,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2015.362",
+    "citation_count": 133,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2147878454",
+    "title": "Ventral Pallidal Representation of Pavlovian Cues and Reward: Population and Rate Codes",
+    "authors": [
+      "Amy J. Tindell",
+      "Kent Berridge",
+      "J. Wayne Aldridge"
+    ],
+    "year": 2004,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.1437-03.2004",
+    "citation_count": 132,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2328261225",
+    "title": "Sex Differences in the Behavioral Effects of 24-h/day Access to Cocaine under a Discrete Trial Procedure",
+    "authors": [
+      "Wendy J. Lynch",
+      "Jane R. Taylor"
+    ],
+    "year": 2003,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300389",
+    "citation_count": 131,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2018263405",
+    "title": "UNIT PRICE AS A USEFUL METRIC IN ANALYZING EFFECTS OF REINFORCER MAGNITUDE",
+    "authors": [
+      "R. J. DeGrandpre",
+      "Warren K. Bickel",
+      "John R. Hughes",
+      "Michael P. Layng",
+      "Gary J. Badger"
+    ],
+    "year": 1993,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1993.60-641",
+    "citation_count": 126,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1969727558",
+    "title": "Dissociable Contributions of Anterior Cingulate Cortex and Basolateral Amygdala on a Rodent Cost/Benefit Decision-Making Task of Cognitive Effort",
+    "authors": [
+      "Jay G. Hosking",
+      "Paul J. Cocker",
+      "Catharine A. Winstanley"
+    ],
+    "year": 2014,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2014.27",
+    "citation_count": 122,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2417239685",
+    "title": "Decreasing Striatopallidal Pathway Function Enhances Motivation by Energizing the Initiation of Goal-Directed Action",
+    "authors": [
+      "Fernanda Carvalho Poyraz",
+      "E. H\u00f6lzner",
+      "Matthew R. Bailey",
+      "J\u00f3zsef M\u00e9sz\u00e1ros",
+      "Lindsay Kenney",
+      "Mazen A. Kheirbek",
+      "Peter D. Balsam",
+      "Christoph Kellendonk"
     ],
     "year": 2016,
     "journal": "Journal of Neuroscience",
-    "doi_or_url": "https://doi.org/10.1523/jneurosci.1901-15.2016",
-    "citation_count": 120,
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.0444-16.2016",
+    "citation_count": 122,
     "is_high_impact": false,
     "open_access": true,
     "used_for": [
@@ -43,25 +1050,1300 @@
     "notes": ""
   },
   {
-    "id": "W4200240026",
-    "title": "Computational validity: using computation to translate behaviours across species",
+    "id": "W1964652787",
+    "title": "FIXED\u2010RATIO PAUSING: JOINT EFFECTS OF PAST REINFORCER MAGNITUDE AND STIMULI CORRELATED WITH UPCOMING MAGNITUDE",
     "authors": [
-      "A. David Redish",
-      "\u00c1d\u00e1m Kepecs",
-      "Lisa M. Anderson",
-      "Olivia L. Calvin",
-      "Nicola M. Grissom",
-      "Ann F. Haynos",
-      "Sarah R. Heilbronner",
-      "Alexander Herman",
-      "Suma Jacob",
-      "Sisi Ma",
-      "Iris Vilares",
-      "Sophia Vinogradov"
+      "Michael Perone",
+      "Karen Courtney"
     ],
-    "year": 2021,
-    "journal": "Philosophical Transactions of the Royal Society B Biological Sciences",
-    "doi_or_url": "https://doi.org/10.1098/rstb.2020.0525",
+    "year": 1992,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1992.57-33",
+    "citation_count": 121,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2021055249",
+    "title": "Sex Differences in Selecting Between Food and Cocaine Reinforcement are Mediated by Estrogen",
+    "authors": [
+      "Kerry A. Kerstetter",
+      "Maya A Ballis",
+      "Stevie Duffin-Lutgen",
+      "Amanda Carr",
+      "Alexandra M Behrens",
+      "Tod E. Kippin"
+    ],
+    "year": 2012,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2012.99",
+    "citation_count": 120,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2089217485",
+    "title": "Common Genetic Effects on Variation in Impulsivity and Activity in Mice",
+    "authors": [
+      "Anthony R Isles",
+      "Trevor Humby",
+      "Eurof Walters",
+      "Lawrence S. Wilkinson"
+    ],
+    "year": 2004,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.1650-04.2004",
+    "citation_count": 119,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2333240002",
+    "title": "Increases in Dopamine D3 Receptor Binding in Rats Receiving a Cocaine Challenge at Various Time Points after Cocaine Self-Administration: Implications for Cocaine-Seeking Behavior",
+    "authors": [
+      "Janet L. Neisewander",
+      "Rita A. Fuchs",
+      "Ly T.L. Tran-Nguyen",
+      "Suzanne M. Weber",
+      "Greg Coffey",
+      "Jeffrey N. Joyce"
+    ],
+    "year": 2004,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300456",
+    "citation_count": 118,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2012208498",
+    "title": "Comparative analysis of learning in honeybees",
+    "authors": [
+      "M. E. Bitterman"
+    ],
+    "year": 1996,
+    "journal": "Animal Learning & Behavior",
+    "doi_or_url": "https://doi.org/10.3758/bf03198961",
+    "citation_count": 118,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W4322703264",
+    "title": "Selective Reward Deficit in Mice Lacking \u03b2-Endorphin and Enkephalin",
+    "authors": [
+      "Michael D. Hayward",
+      "John E. Pintar",
+      "Malcolm J. Low"
+    ],
+    "year": 2002,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.22-18-08251.2002",
+    "citation_count": 116,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2000163102",
+    "title": "THE MOMENTUM OF COMPLIANCE",
+    "authors": [
+      "John A. Nevin"
+    ],
+    "year": 1996,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1996.29-535",
+    "citation_count": 109,
+    "is_high_impact": false,
+    "open_access": false,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2053030710",
+    "title": "Differential Roles of 5-HT Receptor Subtypes in Cue and Cocaine Reinstatement of Cocaine-Seeking Behavior in Rats",
+    "authors": [
+      "J Burmeister",
+      "Erin M Lungren",
+      "Kenneth F. Kirschner",
+      "Janet L. Neisewander"
+    ],
+    "year": 2003,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300346",
+    "citation_count": 106,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2097963977",
+    "title": "Sensitivity to Cognitive Effort Mediates Psychostimulant Effects on a Novel Rodent Cost/Benefit Decision-Making Task",
+    "authors": [
+      "Paul J. Cocker",
+      "Jay G. Hosking",
+      "James Benoit",
+      "Catharine A. Winstanley"
+    ],
+    "year": 2012,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2012.30",
+    "citation_count": 105,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2024791500",
+    "title": "FUNCTIONAL ANALYSIS AND TREATMENT OF ELOPEMENT",
+    "authors": [
+      "Cathleen C. Piazza",
+      "Gregory P. Hanley",
+      "Lynn G. Bowman",
+      "John M. Ruyter",
+      "Steven E. Lindauer",
+      "Deborah M. Saiontz"
+    ],
+    "year": 1997,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1997.30-653",
+    "citation_count": 105,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2951099875",
+    "title": "Chemogenetic Manipulations of Ventral Tegmental Area Dopamine Neurons Reveal Multifaceted Roles in Cocaine Abuse",
+    "authors": [
+      "Stephen V. Mahler",
+      "Zachary D. Brodnik",
+      "Brittney M. Cox",
+      "William C. Buchta",
+      "Brandon S. Bentzley",
+      "Julian Quintanilla",
+      "Zackary A. Cope",
+      "Edwin C Lin",
+      "Matthew D. Riedy",
+      "Michael D. Scofield",
+      "Justin Messinger",
+      "Christina M. Ruiz"
+    ],
+    "year": 2018,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.0537-18.2018",
+    "citation_count": 105,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1998415440",
+    "title": "ACQUISITION OF LEVER\u2010PRESS RESPONDING IN RATS WITH DELAYED REINFORCEMENT: A COMPARISON OF THREE PROCEDURES",
+    "authors": [
+      "Jayson Wilkenfield",
+      "Mark K. Nickel",
+      "Elbert Blakely",
+      "Alan Poling"
+    ],
+    "year": 1992,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1992.58-431",
+    "citation_count": 104,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2102609250",
+    "title": "ANALYSIS OF RESPONSE ALLOCATION IN INDIVIDUALS WITH MULTIPLE FORMS OF STEREOTYPED BEHAVIOR",
+    "authors": [
+      "John T. Rapp",
+      "Timothy R. Vollmer",
+      "Claire C. St. Peter",
+      "Claudia L. Dozier",
+      "Nicole M. Cotnoir"
+    ],
+    "year": 2004,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.2004.37-481",
+    "citation_count": 104,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1806830406",
+    "title": "The Stomach-Derived Hormone Ghrelin Increases Impulsive Behavior",
+    "authors": [
+      "Rozita H. Anderberg",
+      "Caroline Hansson",
+      "Maya Fenander",
+      "Jennifer E. Richard",
+      "Suzanne L. Dickson",
+      "Hans Nissbrandt",
+      "Filip Bergquist",
+      "Karolina P. Skibicka"
+    ],
+    "year": 2015,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2015.297",
+    "citation_count": 102,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2769019845",
+    "title": "Are Cocaine-Seeking \u201cHabits\u201d Necessary for the Development of Addiction-Like Behavior in Rats?",
+    "authors": [
+      "Bryan F. Singer",
+      "Monica Fadanelli",
+      "Alex B. Kawa",
+      "Terry E. Robinson"
+    ],
+    "year": 2017,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.2458-17.2017",
+    "citation_count": 100,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1901626591",
+    "title": "Blockade of D1 Dopamine Receptors in the Ventral Tegmental Area Decreases Cocaine Reward: Possible Role for Dendritically Released Dopamine",
+    "authors": [
+      "Robert Ranaldi",
+      "Roy A. Wise"
+    ],
+    "year": 2001,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.21-15-05841.2001",
+    "citation_count": 100,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1530025852",
+    "title": "A COMPARISON OF TWO PAIRING PROCEDURES TO ESTABLISH PRAISE AS A REINFORCER",
+    "authors": [
+      "Claudia L. Dozier",
+      "Brian A. Iwata",
+      "Jessica L. Thomason\u2010Sassi",
+      "April S. Worsdell",
+      "Darrell M. Wilson"
+    ],
+    "year": 2012,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.2012.45-721",
+    "citation_count": 99,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2109660306",
+    "title": "EXAMINATION OF RELATIVE REINFORCEMENT EFFECTS OF STIMULI IDENTIFIED THROUGH PRETREATMENT AND DAILY BRIEF PREFERENCE ASSESSMENTS",
+    "authors": [
+      "Iser G. DeLeon",
+      "Wayne W. Fisher",
+      "Vanessa Rodriguez\u2010Catter",
+      "Kristen A. Maglieri",
+      "Kelly Herman",
+      "Jean\u2010Marie Marhefka"
+    ],
+    "year": 2001,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.2001.34-463",
+    "citation_count": 97,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W3091989781",
+    "title": "Dissecting the Role of GABA Neurons in the VTA<i>versus</i>SNr in Opioid Reward",
+    "authors": [
+      "Ewa Galaj",
+      "Xiao Han",
+      "Hui Shen",
+      "Chloe J. Jordan",
+      "Yi He",
+      "Bree A. Humburg",
+      "Guo\u2010Hua Bi",
+      "Zheng\u2010Xiong Xi"
+    ],
+    "year": 2020,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.0988-20.2020",
+    "citation_count": 96,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W187640026",
+    "title": "Separating Discriminative and Function-Altering Effects of Verbal Stimuli",
+    "authors": [
+      "Henry D. Schlinger"
+    ],
+    "year": 1993,
+    "journal": "The Behavior Analyst",
+    "doi_or_url": "https://doi.org/10.1007/bf03392605",
+    "citation_count": 95,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1988634644",
+    "title": "Learning to vary and varying to learn",
+    "authors": [
+      "Alicia Grunow",
+      "Allen Neuringer"
+    ],
+    "year": 2002,
+    "journal": "Psychonomic Bulletin & Review",
+    "doi_or_url": "https://doi.org/10.3758/bf03196279",
+    "citation_count": 95,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2540425834",
+    "title": "Endogenous Glucagon-like Peptide-1 Receptor Signaling in the Nucleus Tractus Solitarius is Required for Food Intake Control",
+    "authors": [
+      "Amber L. Alhadeff",
+      "Blake Mergler",
+      "Derek J. Zimmer",
+      "Christopher A. Turner",
+      "David J. Reiner",
+      "Heath D. Schmidt",
+      "Harvey J. Grill",
+      "Matthew R. Hayes"
+    ],
+    "year": 2016,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2016.246",
+    "citation_count": 94,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2130657668",
+    "title": "EFFECTS OF REINFORCER QUALITY ON BEHAVIORAL MOMENTUM: COORDINATED APPLIED AND BASIC RESEARCH",
+    "authors": [
+      "F. Charles Mace",
+      "Benjamin C. Mauro",
+      "Amy E. Boyajian",
+      "Tanya L. Eckert"
+    ],
+    "year": 1997,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1997.30-1",
+    "citation_count": 93,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2005498643",
+    "title": "Sugar Overconsumption during Adolescence Selectively Alters Motivation and Reward Function in Adult Rats",
+    "authors": [
+      "Leandro F. Vendruscolo",
+      "Aliou B. Gueye",
+      "Muriel Darnaud\u00e9ry",
+      "Serge H. Ahmed",
+      "Martine Cador"
+    ],
+    "year": 2010,
+    "journal": "PLoS ONE",
+    "doi_or_url": "https://doi.org/10.1371/journal.pone.0009296",
+    "citation_count": 93,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2130384863",
+    "title": "Highly Specific Role of Hypocretin (Orexin) Neurons: Differential Activation as a Function of Diurnal Phase, Operant Reinforcement versus Operant Avoidance and Light Level",
+    "authors": [
+      "R. L. McGregor",
+      "Ming\u2010Fung Wu",
+      "Grace Barber",
+      "Lalini Ramanathan",
+      "Jerome M. Siegel"
+    ],
+    "year": 2011,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.4017-11.2011",
+    "citation_count": 92,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2095109706",
+    "title": "Premotor cortex is critical for goal-directed actions",
+    "authors": [
+      "Christina M. Gremel",
+      "Rui M. Costa"
+    ],
+    "year": 2013,
+    "journal": "Frontiers in Computational Neuroscience",
+    "doi_or_url": "https://doi.org/10.3389/fncom.2013.00110",
+    "citation_count": 85,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2102527017",
+    "title": "EMERGENCE OF REINFORCER PREFERENCE AS A FUNCTION OF SCHEDULE REQUIREMENTS AND STIMULUS SIMILARITY",
+    "authors": [
+      "Iser G. DeLeon",
+      "Brian A. Iwata",
+      "Han\u2010Leong Goh",
+      "April S. Worsdell"
+    ],
+    "year": 1997,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1997.30-439",
+    "citation_count": 83,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2054976602",
+    "title": "Resistance to extinction: contingency termination and generalization decrement",
+    "authors": [
+      "John A. Nevin",
+      "Anthony P. McLean",
+      "Randolph C. Grace"
+    ],
+    "year": 2001,
+    "journal": "Animal Learning & Behavior",
+    "doi_or_url": "https://doi.org/10.3758/bf03192826",
+    "citation_count": 81,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2006030101",
+    "title": "Methadone Maintenance Reduces Heroin- and Cocaine-Induced Relapse without Affecting Stress-Induced Relapse in a Rodent Model of Poly-Drug Use",
+    "authors": [
+      "Francesco Leri",
+      "Annie Tremblay",
+      "Robert E. Sorge",
+      "Jane Stewart"
+    ],
+    "year": 2004,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300435",
+    "citation_count": 81,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1941428045",
+    "title": "Persistent palatable food preference in rats with a history of limited and extended access to methamphetamine self\u2010administration",
+    "authors": [
+      "Daniele Caprioli",
+      "Tamara Zeric",
+      "Eric B. Thorndike",
+      "Marco V\u00e8nniro"
+    ],
+    "year": 2015,
+    "journal": "Addiction Biology",
+    "doi_or_url": "https://doi.org/10.1111/adb.12220",
+    "citation_count": 80,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2323688315",
+    "title": "GABAA and Opioid Receptors of the Central Nucleus of the Amygdala Selectively Regulate Ethanol-Maintained Behaviors",
+    "authors": [
+      "Katrina L. Foster",
+      "Peter F. McKay",
+      "Regat Seyoum",
+      "Dana Milbourne",
+      "Wenyuan Yin",
+      "Prerana Sarma",
+      "James M. Cook",
+      "Harry L. June"
+    ],
+    "year": 2003,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300306",
+    "citation_count": 78,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W3009735770",
+    "title": "Circulating Triglycerides Gate Dopamine-Associated Behaviors through DRD2-Expressing Neurons",
+    "authors": [
+      "Chlo\u00e9 Berland",
+      "Enrica Montalban",
+      "Elodie Perrin",
+      "Mathieu Di Miceli",
+      "Yuko Nakamura",
+      "Maud Martinat",
+      "Mary C. Sullivan",
+      "Xue S. Davis",
+      "Mohammad Ali Shenasa",
+      "Claire Martin",
+      "St\u00e9fania Tolu",
+      "Fabio Marti"
+    ],
+    "year": 2020,
+    "journal": "Cell Metabolism",
+    "doi_or_url": "https://doi.org/10.1016/j.cmet.2020.02.010",
+    "citation_count": 74,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2116269931",
+    "title": "The beneficial sexually transmitted microbe hypothesis of avian copulation",
+    "authors": [
+      "Michael P. Lombardo"
+    ],
+    "year": 1999,
+    "journal": "Behavioral Ecology",
+    "doi_or_url": "https://doi.org/10.1093/beheco/10.3.333",
+    "citation_count": 73,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1993718470",
+    "title": "ON THE EFFECTS OF NONCONTINGENT DELIVERY OF DIFFERING MAGNITUDES OF REINFORCEMENT",
+    "authors": [
+      "James E. Carr",
+      "Jon S. Bailey",
+      "Cheryl L. Ecott",
+      "Kim D. Lucker",
+      "Timothy M. Weil"
+    ],
+    "year": 1998,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1998.31-313",
+    "citation_count": 72,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2098516797",
+    "title": "ASSESSMENT OF PREFERENCE FOR VARIED VERSUS CONSTANT REINFORCERS",
+    "authors": [
+      "Lynn G. Bowman",
+      "Cathleen C. Piazza",
+      "Wayne W. Fisher",
+      "Louis P. Hagopian",
+      "Jeffrey S. Kogan"
+    ],
+    "year": 1997,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.1997.30-451",
+    "citation_count": 72,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2911284908",
+    "title": "Incentive and dopamine sensitization produced by intermittent but not long access cocaine self\u2010administration",
+    "authors": [
+      "Alex B. Kawa",
+      "Alec C. Valenta",
+      "Robert T. Kennedy",
+      "Terry E. Robinson"
+    ],
+    "year": 2019,
+    "journal": "European Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1111/ejn.14418",
+    "citation_count": 70,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2036241458",
+    "title": "CRITICISMS OF THE SATIETY HYPOTHESIS AS AN EXPLANATION FOR WITHIN\u2010SESSION DECREASES IN RESPONDING",
+    "authors": [
+      "Frances K. McSweeney",
+      "Eric S. Murphy"
+    ],
+    "year": 2000,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2000.74-347",
+    "citation_count": 70,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2039959923",
+    "title": "Acetylcholine Release in the Mesocorticolimbic Dopamine System during Cocaine Seeking: Conditioned and Unconditioned Contributions to Reward and Motivation",
+    "authors": [
+      "Zhi\u2010Bing You",
+      "Bin Wang",
+      "Dawnya L. Zitzman",
+      "Roy A. Wise"
+    ],
+    "year": 2008,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.0694-08.2008",
+    "citation_count": 70,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2000094462",
+    "title": "Effects of Contingent and Non-Contingent Cocaine on Drug-Seeking Behavior Measured Using a Second-Order Schedule of Cocaine Reinforcement in Rats",
+    "authors": [
+      "Athina Markou"
+    ],
+    "year": 1999,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1016/s0893-133x(98)00080-3",
+    "citation_count": 69,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2034018866",
+    "title": "Operant Procedures for Assessing Behavioral Flexibility in Rats",
+    "authors": [
+      "Anne\u2010Marie Brady",
+      "Stan Floresco"
+    ],
+    "year": 2015,
+    "journal": "Journal of Visualized Experiments",
+    "doi_or_url": "https://doi.org/10.3791/52387",
+    "citation_count": 69,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2033029177",
+    "title": "ON THE RELATION BETWEEN PREFERENCE AND RESISTANCE TO CHANGE",
+    "authors": [
+      "Randolph C. Grace",
+      "John A. Nevin"
+    ],
+    "year": 1997,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1997.67-43",
+    "citation_count": 69,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2042240432",
+    "title": "Estrogen Receptor \u03b2, but not \u03b1, Mediates Estrogen's Effect on Cocaine-Induced Reinstatement of Extinguished Cocaine-Seeking Behavior in Ovariectomized Female Rats",
+    "authors": [
+      "Erin B. Larson",
+      "Marilyn E. Carroll"
+    ],
+    "year": 2006,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1301249",
+    "citation_count": 69,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2109003251",
+    "title": "REINFORCEMENT MAGNITUDE: AN EVALUATION OF PREFERENCE AND REINFORCER EFFICACY",
+    "authors": [
+      "Nicole M. Trosclair\u2010Lasserre",
+      "Dorothea C. Lerman",
+      "Nathan A. Call",
+      "Laura Addison",
+      "Tiffany Kodak"
+    ],
+    "year": 2008,
+    "journal": "Journal of Applied Behavior Analysis",
+    "doi_or_url": "https://doi.org/10.1901/jaba.2008.41-203",
+    "citation_count": 67,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1991677889",
+    "title": "Galantamine, an Acetylcholinesterase Inhibitor and Positive Allosteric Modulator of Nicotinic Acetylcholine Receptors, Attenuates Nicotine Taking and Seeking in Rats",
+    "authors": [
+      "Thomas J. Hopkins",
+      "Laura E. Rupprecht",
+      "Matthew R. Hayes",
+      "Julie A. Blendy",
+      "Heath D. Schmidt"
+    ],
+    "year": 2012,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2012.83",
+    "citation_count": 66,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2171958167",
+    "title": "RESURGENCE OF RESPONSE SEQUENCES DURING EXTINCTION IN RATS SHOWS A PRIMACY EFFECT",
+    "authors": [
+      "Phil Reed",
+      "Theresa A. Morgan"
+    ],
+    "year": 2006,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2006.20-05",
+    "citation_count": 66,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2091072948",
+    "title": "RESISTANCE TO CHANGE OF OPERANT VARIATION AND REPETITION",
+    "authors": [
+      "Adam H. Doughty",
+      "Kennon A. Lattal"
+    ],
+    "year": 2001,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2001.76-195",
+    "citation_count": 64,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2765443645",
+    "title": "A neuronal mechanism underlying decision-making deficits during hyperdopaminergic states",
+    "authors": [
+      "Jeroen P. H. Verharen",
+      "Johannes W. de Jong",
+      "Theresia J. M. Roelofs",
+      "Christiaan F. M. Huffels",
+      "Ruud van Zessen",
+      "Mieneke C. M. Luijendijk",
+      "Ralph Hamelink",
+      "Ingo Willuhn",
+      "Hanneke E.M. den Ouden",
+      "G Plasse",
+      "Roger A.H. Adan",
+      "Louk J. M. J. Vanderschuren"
+    ],
+    "year": 2018,
+    "journal": "Nature Communications",
+    "doi_or_url": "https://doi.org/10.1038/s41467-018-03087-1",
+    "citation_count": 64,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2031299021",
+    "title": "Leptin Signaling in the Medial Nucleus Tractus Solitarius Reduces Food Seeking and Willingness to Work for Food",
+    "authors": [
+      "Scott E. Kanoski",
+      "Amber L. Alhadeff",
+      "Samantha M. Fortin",
+      "Jennifer R Gilbert",
+      "Harvey J. Grill"
+    ],
+    "year": 2013,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2013.235",
+    "citation_count": 63,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2286609955",
+    "title": "Melanocortin 3 Receptor Signaling in Midbrain Dopamine Neurons Increases the Motivation for Food Reward",
+    "authors": [
+      "Rahul Pandit",
+      "Azar Omrani",
+      "Mieneke C. M. Luijendijk",
+      "V\u00e9ronne A. J. de Vrind",
+      "A. J. van Rozen",
+      "Ralph J. A. Oude Ophuis",
+      "Keith M. Garner",
+      "Imre Kall\u00f3",
+      "Alexander Ghanem",
+      "Zsolt Liposits",
+      "Karl\u2010Klaus Conzelmann",
+      "Louk J. M. J. Vanderschuren"
+    ],
+    "year": 2016,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2016.19",
+    "citation_count": 62,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2936438292",
+    "title": "Glucagon-Like Peptide-1 Receptor Agonist Treatment Does Not Reduce Abuse-Related Effects of Opioid Drugs",
+    "authors": [
+      "Annika Billefeld Bornebusch",
+      "Anders Fink\u2010Jensen",
+      "Gitta W\u00f6rtwein",
+      "Randy J. Seeley",
+      "Morgane Thomsen"
+    ],
+    "year": 2019,
+    "journal": "eNeuro",
+    "doi_or_url": "https://doi.org/10.1523/eneuro.0443-18.2019",
+    "citation_count": 62,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2086644402",
+    "title": "PATTERNS OF RESPONDING WITHIN SESSIONS",
+    "authors": [
+      "Frances K. McSweeney",
+      "John M. Hinson"
+    ],
+    "year": 1992,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1992.58-19",
+    "citation_count": 62,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2592486468",
+    "title": "Thalamic Control of Dorsomedial Striatum Regulates Internal State to Guide Goal-Directed Action Selection",
+    "authors": [
+      "Laura A Bradfield",
+      "Bernard W. Balleine"
+    ],
+    "year": 2017,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.3860-16.2017",
+    "citation_count": 62,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2046804265",
+    "title": "Neonatal Isolation Stress Potentiates Cocaine Seeking Behavior in Adult Male and Female Rats",
+    "authors": [
+      "Wendy J. Lynch",
+      "Lauren D Mangini",
+      "Jane R. Taylor"
+    ],
+    "year": 2004,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300594",
+    "citation_count": 61,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2004832366",
+    "title": "Pr\u00e9cis ofFrustration Theory: An Analysis of Dispositional Learning and Memory",
+    "authors": [
+      "Abram Amsel"
+    ],
+    "year": 1994,
+    "journal": "Psychonomic Bulletin & Review",
+    "doi_or_url": "https://doi.org/10.3758/bf03213968",
+    "citation_count": 61,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2427788586",
+    "title": "Adolescent \u03949-Tetrahydrocannabinol Exposure Alters WIN55,212-2 Self-Administration in Adult Rats",
+    "authors": [
+      "Mar\u00eda Scherma",
+      "Christian Dess\u00ec",
+      "Anna Lisa Muntoni",
+      "Salvatore Lecca",
+      "Valentina Satta",
+      "Antonio Luchicchi",
+      "Marco Pistis",
+      "Leigh V. Panlilio",
+      "Liana Fattore",
+      "Steven R. Goldberg",
+      "Walter Fratta",
+      "Paola Fadda"
+    ],
+    "year": 2015,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2015.295",
+    "citation_count": 61,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2050783670",
+    "title": "The Uncompetitive N-methyl-D-Aspartate Antagonist Memantine Reduces Binge-Like Eating, Food-Seeking Behavior, and Compulsive Eating: Role of the Nucleus Accumbens Shell",
+    "authors": [
+      "Karen L. Smith",
+      "Rahul Ramesh Rao",
+      "Clara Vel\u00e1zquez-S\u00e1nchez",
+      "Marta Valenza",
+      "Chiara Giuliano",
+      "Barry J. Everitt",
+      "Valentina Sabino",
+      "Pietro Cottone"
+    ],
+    "year": 2014,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/npp.2014.299",
+    "citation_count": 61,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2010219391",
+    "title": "Do animals satiate or habituate to repeatedly presented reinforcers?",
+    "authors": [
+      "Frances K. McSweeney",
+      "John M. Roll"
+    ],
+    "year": 1998,
+    "journal": "Psychonomic Bulletin & Review",
+    "doi_or_url": "https://doi.org/10.3758/bf03208818",
+    "citation_count": 61,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2041027326",
+    "title": "The Ventral Striato-Pallidal Pathway Mediates the Effect of Predictive Learning on Choice between Goal-Directed Actions",
+    "authors": [
+      "Beatrice K. Leung",
+      "Bernard W. Balleine"
+    ],
+    "year": 2013,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.1697-13.2013",
     "citation_count": 60,
     "is_high_impact": false,
     "open_access": true,
@@ -73,15 +2355,16 @@
     "notes": ""
   },
   {
-    "id": "W2204145535",
-    "title": "Cortical-subcortical interactions in cognitive control, associative learning and motor control",
+    "id": "W1978448408",
+    "title": "BOUTS OF RESPONDING FROM VARIABLE\u2010INTERVAL REINFORCEMENT OF LEVER PRESSING BY RATS",
     "authors": [
-      "Peter A. Butcher"
+      "Richard L. Shull",
+      "Julie A. Grimes"
     ],
-    "year": 2014,
-    "journal": "eScholarship (California Digital Library)",
-    "doi_or_url": "https://openalex.org/W2204145535",
-    "citation_count": 2,
+    "year": 2003,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2003.80-159",
+    "citation_count": 60,
     "is_high_impact": false,
     "open_access": true,
     "used_for": [
@@ -92,58 +2375,17 @@
     "notes": ""
   },
   {
-    "id": "W1573524174",
-    "title": "Reinforcement Learning in Individuals at Risk for Alzheimer's Disease",
+    "id": "W2759370097",
+    "title": "Lever Insertion as a Salient Stimulus Promoting Insensitivity to Outcome Devaluation",
     "authors": [
-      "Christina M. Figueroa"
-    ],
-    "year": 2013,
-    "journal": "e-Publications@Marquette (Marquette University)",
-    "doi_or_url": "https://openalex.org/W1573524174",
-    "citation_count": 1,
-    "is_high_impact": false,
-    "open_access": true,
-    "used_for": [
-      "task_workflow",
-      "timing_parameters"
-    ],
-    "parameter_bindings": {},
-    "notes": ""
-  },
-  {
-    "id": "W7131925766",
-    "title": "Novel modulation of P2X3 receptors by endogenous Calcium/calmodulin-dependent serine protein kinase (CASK)",
-    "authors": [
-      "S. K. Hullugundi",
-      "Andrea Nistri",
-      "Elsa Fabbretti",
-      "Tanja Bele",
-      "Aswini Gnanasekaran",
-      "Mayya Sundukova"
-    ],
-    "year": 2014,
-    "journal": "RUNG",
-    "doi_or_url": "https://openalex.org/W7131925766",
-    "citation_count": 0,
-    "is_high_impact": false,
-    "open_access": true,
-    "used_for": [
-      "task_workflow",
-      "timing_parameters"
-    ],
-    "parameter_bindings": {},
-    "notes": ""
-  },
-  {
-    "id": "W2760554526",
-    "title": "Assessing changes in cognitive functioning after estradiol administration using computational modelling and experiential probing",
-    "authors": [
-      "Sebastijan Veseli\u010d"
+      "Youna Vandaele",
+      "Heather J. Pribut",
+      "Patricia H. Janak"
     ],
     "year": 2017,
-    "journal": "PeFprints (University of Ljubljana)",
-    "doi_or_url": "https://openalex.org/W2760554526",
-    "citation_count": 0,
+    "journal": "Frontiers in Integrative Neuroscience",
+    "doi_or_url": "https://doi.org/10.3389/fnint.2017.00023",
+    "citation_count": 60,
     "is_high_impact": false,
     "open_access": true,
     "used_for": [
@@ -154,15 +2396,276 @@
     "notes": ""
   },
   {
-    "id": "W2522809153",
-    "title": "Pharmacogenetics of Non-Motor Symptoms in Parkinson's Disease",
+    "id": "W1963552706",
+    "title": "MOLECULAR ANALYSES OF THE PRINCIPAL COMPONENTS OF RESPONSE STRENGTH",
     "authors": [
-      "Brian D. Robertson"
+      "Peter R. Killeen",
+      "Scott S. Hall",
+      "Mark P Reilly",
+      "Lauren C. Kettle"
     ],
-    "year": 2016,
-    "journal": "Scholarship@Western (Western University)",
-    "doi_or_url": "https://openalex.org/W2522809153",
-    "citation_count": 0,
+    "year": 2002,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.2002.78-127",
+    "citation_count": 60,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1985557013",
+    "title": "Effects of SCH-23390 Infused into the Amygdala or Adjacent Cortex and Basal Ganglia on Cocaine Seeking and Self-Administration in Rats",
+    "authors": [
+      "Andrea T. Alleweireldt",
+      "Rebecca J. Hobbs",
+      "Adam Taylor",
+      "Janet L. Neisewander"
+    ],
+    "year": 2005,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1300794",
+    "citation_count": 59,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1973566728",
+    "title": "Preclinical Efficacy of N-Substituted Benztropine Analogs as Antagonists of Methamphetamine Self-Administration in Rats",
+    "authors": [
+      "Takato Hiranita",
+      "Stephen J. Kohut",
+      "Paul L. Soto",
+      "Gianluigi Tanda",
+      "Theresa Kopajtic",
+      "Jonathan L. Katz"
+    ],
+    "year": 2013,
+    "journal": "Journal of Pharmacology and Experimental Therapeutics",
+    "doi_or_url": "https://doi.org/10.1124/jpet.113.208264",
+    "citation_count": 59,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2995600775",
+    "title": "Deletion of astrocytic BMAL1 results in metabolic imbalance and shorter lifespan in mice",
+    "authors": [
+      "Olga Barca\u2010Mayo",
+      "Arjen J. Boender",
+      "Andrea Armirotti",
+      "Davide De Pietri Tonelli"
+    ],
+    "year": 2019,
+    "journal": "Glia",
+    "doi_or_url": "https://doi.org/10.1002/glia.23764",
+    "citation_count": 59,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1964798322",
+    "title": "Dopaminergic Lesions of the Dorsolateral Striatum in Rats Increase Delay Discounting in an Impulsive Choice Task",
+    "authors": [
+      "Stephanie E. Tedford",
+      "Amanda L. Persons",
+      "T. Celeste Napier"
+    ],
+    "year": 2015,
+    "journal": "PLoS ONE",
+    "doi_or_url": "https://doi.org/10.1371/journal.pone.0122063",
+    "citation_count": 58,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1508550656",
+    "title": "What 50 years of research tell us about pausing under ratio schedules of reinforcement",
+    "authors": [
+      "Henry D. Schlinger",
+      "Adam Derenne",
+      "Alan Baron"
+    ],
+    "year": 2008,
+    "journal": "The Behavior Analyst",
+    "doi_or_url": "https://doi.org/10.1007/bf03392160",
+    "citation_count": 58,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2152016077",
+    "title": "A matching law analysis of the reinforcing efficacy of wheel running in rats",
+    "authors": [
+      "Terry W. Belke",
+      "Gene M. Heyman"
+    ],
+    "year": 1994,
+    "journal": "Animal Learning & Behavior",
+    "doi_or_url": "https://doi.org/10.3758/bf03209834",
+    "citation_count": 58,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2037119218",
+    "title": "PAVLOVIAN CONTINGENCIES AND RESISTANCE TO CHANGE IN A MULTIPLE SCHEDULE",
+    "authors": [
+      "Matthew C. Bell"
+    ],
+    "year": 1999,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1999.72-81",
+    "citation_count": 57,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W1993226559",
+    "title": "DIMINISHING MARGINAL VALUE AS DELAY DISCOUNTING",
+    "authors": [
+      "Howard Rachlin"
+    ],
+    "year": 1992,
+    "journal": "Journal of the Experimental Analysis of Behavior",
+    "doi_or_url": "https://doi.org/10.1901/jeab.1992.57-407",
+    "citation_count": 57,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2000904738",
+    "title": "Metabotropic Glutamate 5 Receptor (mGluR5) Antagonists Decrease Nicotine Seeking, But Do Not Affect the Reinforcement Enhancing Effects of Nicotine",
+    "authors": [
+      "Matthew I. Palmatier",
+      "Xiu Liu",
+      "Eric C. Donny",
+      "Anthony R. Caggiula",
+      "Alan F. Sved"
+    ],
+    "year": 2007,
+    "journal": "Neuropsychopharmacology",
+    "doi_or_url": "https://doi.org/10.1038/sj.npp.1301623",
+    "citation_count": 56,
+    "is_high_impact": true,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W3139729906",
+    "title": "Ventral Pallidum GABA Neurons Mediate Motivation Underlying Risky Choice",
+    "authors": [
+      "Mitchell R. Farrell",
+      "Jeanine Sandra D. Esteban",
+      "Lauren Faget",
+      "Stan Floresco",
+      "Thomas S. Hnasko",
+      "Stephen V. Mahler"
+    ],
+    "year": 2021,
+    "journal": "Journal of Neuroscience",
+    "doi_or_url": "https://doi.org/10.1523/jneurosci.2039-20.2021",
+    "citation_count": 56,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2107753485",
+    "title": "Naltrexone reduces ethanol- and sucrose-reinforced responding in rhesus monkeys",
+    "authors": [
+      "Keith Williams",
+      "Gail Winger",
+      "Eric D. Pakarinen",
+      "James H. Woods"
+    ],
+    "year": 1998,
+    "journal": "Psychopharmacology",
+    "doi_or_url": "https://doi.org/10.1007/s002130050689",
+    "citation_count": 56,
+    "is_high_impact": false,
+    "open_access": true,
+    "used_for": [
+      "task_workflow",
+      "timing_parameters"
+    ],
+    "parameter_bindings": {},
+    "notes": ""
+  },
+  {
+    "id": "W2967156799",
+    "title": "Aberrant habit formation in the Sapap3-knockout mouse model of obsessive-compulsive disorder",
+    "authors": [
+      "Lotfi C. Hadjas",
+      "Christian L\u00fcscher",
+      "Linda D. Simmler"
+    ],
+    "year": 2019,
+    "journal": "Scientific Reports",
+    "doi_or_url": "https://doi.org/10.1038/s41598-019-48637-9",
+    "citation_count": 55,
     "is_high_impact": false,
     "open_access": true,
     "used_for": [

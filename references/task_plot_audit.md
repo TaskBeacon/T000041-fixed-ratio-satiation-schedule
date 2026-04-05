@@ -1,14 +1,14 @@
 # Task Plot Audit
 
-- generated_at: 2026-04-04T10:30:51.4006617+08:00
+- generated_at: 2026-04-05T13:55:16
 - mode: existing
-- task_path: E:\Taskbeacon\T000040-probabilistic-stimulus-selection
+- task_path: E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule
 
 ## 1. Inputs and provenance
 
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\README.md
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\config\config.yaml
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\src\run_trial.py
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\README.md
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\config\config.yaml
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\src\run_trial.py
 
 ## 2. Evidence extracted from README
 
@@ -22,60 +22,36 @@
 
 ## 3. Evidence extracted from config/source
 
-- train_ab: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- train_ab: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- train_ab: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- train_cd: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- train_cd: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- train_cd: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- train_ef: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- train_ef: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- train_ef: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_ab: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_ab: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_ab: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_ac: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_ac: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_ac: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_ad: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_ad: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_ad: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_ae: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_ae: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_ae: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_af: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_af: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_af: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_bc: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_bc: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_bc: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_bd: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_bd: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_bd: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_be: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_be: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_be: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_bf: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_bf: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_bf: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_cd: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_cd: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_cd: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_ce: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_ce: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_ce: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_cf: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_cf: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_cf: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_de: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_de: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_de: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_df: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_df: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_df: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
-- test_ef: phase=choice phase, deadline_expr=response_timeout, response_expr=response_timeout, stim_expr=_unit_stim_id(left_symbol_id, right_symbol_id)
-- test_ef: phase=feedback phase, deadline_expr=feedback_duration, response_expr=n/a, stim_expr=feedback_stim_id
-- test_ef: phase=iti phase, deadline_expr=iti_duration, response_expr=n/a, stim_expr='iti_fixation'
+- fr5: phase=work preview, deadline_expr=work_preview_duration, response_expr=n/a, stim_expr='work_prompt+work_counter+satiety_text+fixation'
+- fr5: visible_show_without_context phase=reward_text, unit_label_expr=(none), duration_expr=reward_duration, stim_exprs=["stim_bank.get_and_format('reward_text', reward_tokens=reward_tokens)", "stim_bank.get('reward_token')", "stim_bank.get_and_format('satiety_text', satiety_pct=satiety_after)"]
+- fr5: visible_show_without_context phase=satiety_text, unit_label_expr=(none), duration_expr=satiation_duration, stim_exprs=["stim_bank.get_and_format('satiety_text', satiety_pct=satiety_after)", "stim_bank.get('fixation')"]
+- fr5: visible_show_without_context phase=timeout_text, unit_label_expr=(none), duration_expr=reward_duration, stim_exprs=["stim_bank.get('timeout_text')", "stim_bank.get('fixation')"]
+- fr5: visible_show_without_context phase=fixation, unit_label_expr=(none), duration_expr=iti_duration, stim_exprs=["stim_bank.get('fixation')"]
+- fr10: phase=work preview, deadline_expr=work_preview_duration, response_expr=n/a, stim_expr='work_prompt+work_counter+satiety_text+fixation'
+- fr10: visible_show_without_context phase=reward_text, unit_label_expr=(none), duration_expr=reward_duration, stim_exprs=["stim_bank.get_and_format('reward_text', reward_tokens=reward_tokens)", "stim_bank.get('reward_token')", "stim_bank.get_and_format('satiety_text', satiety_pct=satiety_after)"]
+- fr10: visible_show_without_context phase=satiety_text, unit_label_expr=(none), duration_expr=satiation_duration, stim_exprs=["stim_bank.get_and_format('satiety_text', satiety_pct=satiety_after)", "stim_bank.get('fixation')"]
+- fr10: visible_show_without_context phase=timeout_text, unit_label_expr=(none), duration_expr=reward_duration, stim_exprs=["stim_bank.get('timeout_text')", "stim_bank.get('fixation')"]
+- fr10: visible_show_without_context phase=fixation, unit_label_expr=(none), duration_expr=iti_duration, stim_exprs=["stim_bank.get('fixation')"]
+- fr20: phase=work preview, deadline_expr=work_preview_duration, response_expr=n/a, stim_expr='work_prompt+work_counter+satiety_text+fixation'
+- fr20: visible_show_without_context phase=reward_text, unit_label_expr=(none), duration_expr=reward_duration, stim_exprs=["stim_bank.get_and_format('reward_text', reward_tokens=reward_tokens)", "stim_bank.get('reward_token')", "stim_bank.get_and_format('satiety_text', satiety_pct=satiety_after)"]
+- fr20: visible_show_without_context phase=satiety_text, unit_label_expr=(none), duration_expr=satiation_duration, stim_exprs=["stim_bank.get_and_format('satiety_text', satiety_pct=satiety_after)", "stim_bank.get('fixation')"]
+- fr20: visible_show_without_context phase=timeout_text, unit_label_expr=(none), duration_expr=reward_duration, stim_exprs=["stim_bank.get('timeout_text')", "stim_bank.get('fixation')"]
+- fr20: visible_show_without_context phase=fixation, unit_label_expr=(none), duration_expr=iti_duration, stim_exprs=["stim_bank.get('fixation')"]
+
+## 3b. Warnings
+
+- fr5:reward_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr5:satiety_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr5:timeout_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr5:fixation: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr10:reward_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr10:satiety_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr10:timeout_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr10:fixation: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr20:reward_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr20:satiety_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr20:timeout_text: participant-visible phase inferred from show() because set_trial_context(...) is missing
+- fr20:fixation: participant-visible phase inferred from show() because set_trial_context(...) is missing
 
 ## 4. Mapping to task_plot_spec
 
@@ -96,100 +72,42 @@
 
 - output_file: task_flow.png
 - dpi: 300
-- max_conditions: 1
-- screens_per_timeline: 6
+- max_conditions: 3
+- screens_per_timeline: 5
 - screen_overlap_ratio: 0.1
 - screen_slope: 0.08
 - screen_slope_deg: 25.0
 - screen_aspect_ratio: 1.4545454545454546
 - qa_mode: local
 - auto_layout_feedback:
-  - layout pass 1: crop-only; left=0.018, right=0.032, blank=0.123
+  - layout pass 1: crop-only; left=0.031, right=0.033, blank=0.119
 - auto_layout_feedback_records:
   - pass: 1
-    metrics: {'left_ratio': 0.0177, 'right_ratio': 0.032, 'blank_ratio': 0.1235}
+    metrics: {'left_ratio': 0.0308, 'right_ratio': 0.0331, 'blank_ratio': 0.1192}
 
 ## 7. Output files and checksums
 
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\references\task_plot_spec.yaml: sha256=a373cb5f8ce30f082096193eebc1eabd225fcd98f44df1d91acac9ce431704a2
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\references\task_plot_spec.json: sha256=ab23131e39a9a663cb2e6e5f307a3fca6de999292aeb4a158fbde42b28cd817d
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\references\task_plot_source_excerpt.md: sha256=50ab77e24bbf0ce1a7b59a5aa570eb9416e194155479e6f291495e003a8389f3
-- E:\Taskbeacon\T000040-probabilistic-stimulus-selection\task_flow.png: sha256=db8628bb73be0056d3462b8abd61362dd105283766fe0ebbb4c8e45a882812627
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\references\task_plot_spec.yaml: sha256=f55fb647f688837e73cfdd7666a65b311e1ee44c1b74f9d1a3b6986c56c1bf87
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\references\task_plot_spec.json: sha256=9cbdd855175303521f8fe88f95f508b7cbcb62a04c87c6ed8ae78872b51886a5
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\references\task_plot_source_excerpt.md: sha256=7710f42378e719e583f4204046d23270dbbf9a17e29204cb8d277b19be0a1a40
+- E:\Taskbeacon\T000041-fixed-ratio-satiation-schedule\task_flow.png: sha256=b10231eccdef69fc45a7713e15a42a1071a3dd433c05afb9c2277d438181fdf2
 
 ## 8. Inferred/uncertain items
 
-- train_ab:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- train_ab:choice phase:stimulus unresolved, used textual fallback
-- train_ab:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- train_ab:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- train_cd:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- train_cd:choice phase:stimulus unresolved, used textual fallback
-- train_cd:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- train_cd:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- train_ef:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- train_ef:choice phase:stimulus unresolved, used textual fallback
-- train_ef:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- train_ef:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_ab:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_ab:choice phase:stimulus unresolved, used textual fallback
-- test_ab:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_ab:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_ac:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_ac:choice phase:stimulus unresolved, used textual fallback
-- test_ac:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_ac:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_ad:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_ad:choice phase:stimulus unresolved, used textual fallback
-- test_ad:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_ad:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_ae:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_ae:choice phase:stimulus unresolved, used textual fallback
-- test_ae:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_ae:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_af:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_af:choice phase:stimulus unresolved, used textual fallback
-- test_af:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_af:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_bc:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_bc:choice phase:stimulus unresolved, used textual fallback
-- test_bc:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_bc:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_bd:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_bd:choice phase:stimulus unresolved, used textual fallback
-- test_bd:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_bd:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_be:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_be:choice phase:stimulus unresolved, used textual fallback
-- test_be:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_be:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_bf:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_bf:choice phase:stimulus unresolved, used textual fallback
-- test_bf:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_bf:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_cd:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_cd:choice phase:stimulus unresolved, used textual fallback
-- test_cd:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_cd:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_ce:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_ce:choice phase:stimulus unresolved, used textual fallback
-- test_ce:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_ce:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_cf:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_cf:choice phase:stimulus unresolved, used textual fallback
-- test_cf:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_cf:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_de:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_de:choice phase:stimulus unresolved, used textual fallback
-- test_de:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_de:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_df:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_df:choice phase:stimulus unresolved, used textual fallback
-- test_df:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_df:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- test_ef:choice phase:heuristic numeric parse from 'float(_get_setting(settings, 'response_timeout', default=4.0))'
-- test_ef:choice phase:stimulus unresolved, used textual fallback
-- test_ef:feedback phase:heuristic numeric parse from 'float(_get_setting(settings, 'feedback_duration', default=1.0))'
-- test_ef:iti phase:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=1.0))'
-- collapsed equivalent condition logic into representative timeline: train_ab, train_cd, train_ef, test_ab, test_ac, test_ad, test_ae, test_af, test_bc, test_bd, test_be, test_bf, test_cd, test_ce, test_cf, test_de, test_df, test_ef
-- unparsed if-tests defaulted to condition-agnostic applicability: correct_role is None; block_kind == 'learning'; learning_phase; learning_phase; correct_role is not None; not left_symbol_id; not right_symbol_id; selected_role is not None
-- manual layout fix applied after render: shortened `display_condition_note` and set `meta.task_id` to `T000040` to keep the condition label column readable
+- fr5:work preview:heuristic numeric parse from 'min(0.6, press_timeout)'
+- fr5:reward_text:heuristic numeric parse from 'float(_get_setting(settings, 'reward_duration', default=0.9))'
+- fr5:satiety_text:heuristic numeric parse from 'float(_get_setting(settings, 'satiation_duration', default=1.2))'
+- fr5:timeout_text:heuristic numeric parse from 'float(_get_setting(settings, 'reward_duration', default=0.9))'
+- fr5:fixation:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=0.8))'
+- fr10:work preview:heuristic numeric parse from 'min(0.6, press_timeout)'
+- fr10:reward_text:heuristic numeric parse from 'float(_get_setting(settings, 'reward_duration', default=0.9))'
+- fr10:satiety_text:heuristic numeric parse from 'float(_get_setting(settings, 'satiation_duration', default=1.2))'
+- fr10:timeout_text:heuristic numeric parse from 'float(_get_setting(settings, 'reward_duration', default=0.9))'
+- fr10:fixation:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=0.8))'
+- fr20:work preview:heuristic numeric parse from 'min(0.6, press_timeout)'
+- fr20:reward_text:heuristic numeric parse from 'float(_get_setting(settings, 'reward_duration', default=0.9))'
+- fr20:satiety_text:heuristic numeric parse from 'float(_get_setting(settings, 'satiation_duration', default=1.2))'
+- fr20:timeout_text:heuristic numeric parse from 'float(_get_setting(settings, 'reward_duration', default=0.9))'
+- fr20:fixation:heuristic numeric parse from 'float(_get_setting(settings, 'iti_duration', default=0.8))'
+- collapsed equivalent condition logic into representative timeline: fr5, fr10, fr20
+- unparsed if-tests defaulted to condition-agnostic applicability: first_onset_global is None; isinstance(onset_global, (int, float)); first_onset_global is not None; last_response_global is not None; isinstance(response_time_global, (int, float)); not work_timeout; trial_data['presses_completed'] >= ratio_requirement; response_hit

@@ -2,301 +2,194 @@
 
 ## 1. Paradigm Intent
 
-- Task: Probabilistic Stimulus Selection
-- Primary construct: probabilistic reinforcement learning, positive-vs-negative feedback sensitivity, and transfer choice bias
+- Task: Fixed-ratio Satiation Schedule
+- Primary construct: effort allocation under a fixed-ratio reinforcement schedule while cumulative reward value is indexed by satiation
 - Manipulated factors:
-  - training pair contingencies: AB 80/20, CD 70/30, EF 60/40
-  - learning versus transfer phase
-  - pair order within each block
-  - left/right placement of the role-bearing symbol within each pair
+  - fixed-ratio requirement per trial (`fr5`, `fr10`, `fr20`)
+  - cumulative satiety state across the session
 - Dependent measures:
-  - training accuracy by pair
-  - learning-block criterion attainment
-  - transfer choice proportions, especially A-choice and B-avoidance
-  - choice latency
-  - timeout / omission rate
+  - press completion rate
+  - completion latency per ratio trial
+  - timeout rate
+  - reward-token accumulation
+  - satiety fraction at reward delivery
 - Key citations:
-  - `W2014979870` - classic open-access PSS structure and transfer test
-  - `W2125735154` - open-access task implementation with 60-trial learning blocks, 65/60/50 criteria, 150-trial test default, and left/right balance
-  - `W2170143116` - open-access PSS variant with explicit 4 s stimulus display and no-feedback performance phase
-  - `W2419503723` - open-access supporting paper that includes the PSS transfer phase inside a broader reinforcement-learning battery
+  - `W1964652787` Fixed-ratio pausing: joint effects of past reinforcer magnitude and stimuli correlated with upcoming magnitude
+  - `W2037578646` Response rate viewed as engagement bouts: effects of relative reinforcement and schedule type
+  - `W2167077741` Establishing operations and reinforcement effects
+  - `W2029549266` Hippocampal GLP-1 Receptors Influence Food Intake, Meal Size, and Effort-Based Responding for Food through Volume Transmission
+  - `W2168128112` The Novel Cannabinoid CB1 Receptor Neutral Antagonist AM4113 Suppresses Food Intake and Food-Reinforced Behavior but Does not Induce Signs of Nausea in Rats
+  - `W2077496630` The Glucagon-Like Peptide 1 (GLP-1) Analogue, Exendin-4, Decreases the Rewarding Value of Food: A New Role for Mesolimbic GLP-1 Receptors
+  - `W2164961539` Dopamine Modulates Reward-Related Vigor
+  - `W1980196077` Dopamine Antagonism Decreases Willingness to Expend Physical, But Not Cognitive, Effort: A Comparison of Two Rodent Cost/Benefit Decision-Making Tasks
 
 ## 2. Block/Trial Workflow
 
 ### Block Structure
 
-- Total blocks: learning blocks repeat until criteria are met; one transfer block follows. Use `max_learning_blocks=6` as a safety cap for automation.
-- Trials per block: learning blocks run 60 trials each; transfer runs 150 trials by default.
+- Total blocks: 3 in the human config; QA/sim configs use shortened one-block probes
+- Trials per block: 18 in the human config; 3 in QA/sim
 - Randomization/counterbalancing:
-  - six Hiragana symbols are randomly assigned to the roles A-F at runtime
-  - within each block, each pair is balanced 50/50 for left/right placement
-  - trial order is shuffled within the block while preserving the exact pair counts
+  - `BlockUnit.generate_conditions(...)` is used
+  - trial labels are balanced across the three fixed-ratio conditions
+- Condition weight policy:
+  - No custom weighting is required
+  - `task.condition_weights` is defined as an even mapping in config
+  - runtime can rely on `TaskSettings.resolve_condition_weights()` if needed
 - Condition generation method:
-  - custom generator
-  - built-in `BlockUnit.generate_conditions(...)` is not sufficient because the task needs exact pair counts, left/right balance, and criterion-driven repetition
-  - generated condition data shape: list of dictionaries with `phase`, `pair_id`, `left_role`, `right_role`, `correct_role`, `feedback_prob`, `feedback_enabled`, `block_idx`, and `trial_idx`
+  - built-in `BlockUnit.generate_conditions(...)`
+  - the label passed into `run_trial.py` is a simple condition token (`fr5`, `fr10`, `fr20`)
 - Runtime-generated trial values:
-  - role-to-symbol assignment is sampled deterministically from the subject seed
-  - per-trial left/right placement is sampled with exact within-block balance
-  - learning feedback is sampled from the role-specific win probability
-  - block repetition depends on whether the learning criteria are met
-  - transfer trials are generated without feedback but retain the same pair metadata for analysis
+  - `run_trial.py` resolves `ratio_requirement` from the condition token
+  - `run_trial.py` accumulates per-press reaction times and satiety fraction
+  - generation is deterministic because values are derived from the condition label and the running satiety counter, not from hidden state
 
 ### Trial State Machine
 
-List each state in order with entry/exit conditions:
-
-1. State name: `instructions`
-   - Onset trigger: none
-   - Stimuli shown: `instruction_text`
+1. `work_press`
+   - Onset trigger: `trial_onset` on the first press window of the trial; `press_onset` on each press window
+   - Stimuli shown: work prompt, press counter, satiety text, and a neutral center fixation
    - Valid keys: `space`
-   - Timeout behavior: wait until participant continues
-   - Next state: `learning_ready`
-2. State name: `learning_ready`
-   - Onset trigger: `block_onset`
-   - Stimuli shown: `block_ready`
+   - Timeout behavior: if any press window times out before the required count is met, the trial ends without reward
+   - Next state: `reward_delivery` when the required count is reached, otherwise `timeout_feedback` or direct ITI
+
+2. `reward_delivery`
+   - Onset trigger: `reward_onset`
+   - Stimuli shown: gold reward token and reward text
    - Valid keys: none
-   - Timeout behavior: fixed 3000 ms
-   - Next state: `learning_choice`
-3. State name: `learning_choice`
-   - Onset trigger: `trial_onset`
-   - Stimuli shown: two Hiragana symbols, one on the left and one on the right
-   - Valid keys: left key and right key
-   - Timeout behavior: response window capped at 4000 ms
-   - Next state: `learning_feedback`
-4. State name: `learning_feedback`
-   - Onset trigger: `feedback_onset`
-   - Stimuli shown: `feedback_correct` or `feedback_incorrect`
+   - Timeout behavior: fixed-duration display
+   - Next state: `satiation_pause`
+
+3. `satiation_pause`
+   - Onset trigger: `satiation_onset`
+   - Stimuli shown: satiety text only
    - Valid keys: none
-   - Timeout behavior: fixed 1000 ms
-   - Next state: `learning_iti`
-5. State name: `learning_iti`
+   - Timeout behavior: fixed-duration display
+   - Next state: `iti`
+
+4. `iti`
    - Onset trigger: `iti_onset`
-   - Stimuli shown: `iti_fixation`
+   - Stimuli shown: fixation only
    - Valid keys: none
-   - Timeout behavior: fixed 1000 ms
-   - Next state: next learning trial or `learning_block_check`
-6. State name: `learning_block_check`
-   - Onset trigger: none
-   - Stimuli shown: none
-   - Valid keys: none
-   - Timeout behavior: instant block criterion evaluation
-   - Next state: another learning block if criteria are not met, otherwise `transfer_ready`
-7. State name: `transfer_ready`
-   - Onset trigger: `block_onset`
-   - Stimuli shown: `block_ready`
-   - Valid keys: none
-   - Timeout behavior: fixed 3000 ms
-   - Next state: `transfer_choice`
-8. State name: `transfer_choice`
-   - Onset trigger: `trial_onset`
-   - Stimuli shown: two Hiragana symbols, one on the left and one on the right
-   - Valid keys: left key and right key
-   - Timeout behavior: response window capped at 4000 ms
-   - Next state: `transfer_iti`
-9. State name: `transfer_iti`
-   - Onset trigger: `iti_onset`
-   - Stimuli shown: `iti_fixation`
-   - Valid keys: none
-   - Timeout behavior: fixed 1000 ms
-   - Next state: next transfer trial
-10. State name: `good_bye`
-    - Onset trigger: none
-    - Stimuli shown: `good_bye`
-    - Valid keys: `space`
-    - Timeout behavior: wait until participant continues
-    - Next state: experiment end
+   - Timeout behavior: fixed-duration display
+   - Next state: next trial
 
 ## 3. Condition Semantics
 
 For each condition token in `task.conditions`:
 
-- Condition ID: `train_ab`
-  - Participant-facing meaning: a learning trial with the role-A and role-B symbols, where A is correct 80% of the time and B is correct 20% of the time.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: learning feedback is probabilistic and only the role with the higher win probability counts as correct.
-- Condition ID: `train_cd`
-  - Participant-facing meaning: a learning trial with the role-C and role-D symbols, where C is correct 70% of the time and D is correct 30% of the time.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: learning feedback is probabilistic and only the role with the higher win probability counts as correct.
-- Condition ID: `train_ef`
-  - Participant-facing meaning: a learning trial with the role-E and role-F symbols, where E is correct 60% of the time and F is correct 40% of the time.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: learning feedback is probabilistic and only the role with the higher win probability counts as correct.
-- Condition ID: `test_ab`
-  - Participant-facing meaning: a transfer trial with the role-A and role-B symbols, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_ac`
-  - Participant-facing meaning: transfer pair A versus C, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_ad`
-  - Participant-facing meaning: transfer pair A versus D, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_ae`
-  - Participant-facing meaning: transfer pair A versus E, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_af`
-  - Participant-facing meaning: transfer pair A versus F, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_bc`
-  - Participant-facing meaning: transfer pair B versus C, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_bd`
-  - Participant-facing meaning: transfer pair B versus D, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_be`
-  - Participant-facing meaning: transfer pair B versus E, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_bf`
-  - Participant-facing meaning: transfer pair B versus F, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_cd`
-  - Participant-facing meaning: transfer pair C versus D, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_ce`
-  - Participant-facing meaning: transfer pair C versus E, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_cf`
-  - Participant-facing meaning: transfer pair C versus F, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_de`
-  - Participant-facing meaning: transfer pair D versus E, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_df`
-  - Participant-facing meaning: transfer pair D versus F, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
-- Condition ID: `test_ef`
-  - Participant-facing meaning: transfer pair E versus F, no feedback.
-  - Concrete stimulus realization: two Hiragana symbols shown side-by-side with randomized left/right placement.
-  - Outcome rules: choice is logged for transfer analysis; no feedback is shown.
+- Condition ID: `fr5`
+  - Participant-facing meaning: press the space bar 5 times to earn the token
+  - Concrete stimulus realization (visual/audio): text prompt with `5` in the requirement line; cumulative satiety text updates after reward delivery
+  - Outcome rules: reward is delivered only when 5 space presses are completed before the per-press timeout expires
 
-Also document where participant-facing text/stimuli are defined:
+- Condition ID: `fr10`
+  - Participant-facing meaning: press the space bar 10 times to earn the token
+  - Concrete stimulus realization (visual/audio): text prompt with `10` in the requirement line; cumulative satiety text updates after reward delivery
+  - Outcome rules: reward is delivered only when 10 space presses are completed before timeout
 
-- Participant-facing text source: config stimuli in `config/config.yaml`, especially `instruction_text`, `block_ready`, `feedback_correct`, `feedback_incorrect`, `iti_fixation`, and `good_bye`.
-- Why this source is appropriate for auditability: the task wording stays localized in YAML, while the pair logic remains in code; this makes it easy to review or translate the participant text without touching the state machine.
-- Localization strategy: Chinese instructions and feedback live in config, while the Hiragana symbol pool is rendered by a kana-capable font selected in config; changing language or symbol styling should not require edits to `src/run_trial.py`.
+- Condition ID: `fr20`
+  - Participant-facing meaning: press the space bar 20 times to earn the token
+  - Concrete stimulus realization (visual/audio): text prompt with `20` in the requirement line; cumulative satiety text updates after reward delivery
+  - Outcome rules: reward is delivered only when 20 space presses are completed before timeout
+
+Also document where participant-facing condition text/stimuli are defined:
+
+- Participant-facing text source (config stimuli / code formatting / generated assets): `config/config.yaml` `stimuli.*` entries, formatted at runtime with `StimBank.get_and_format(...)`
+- Why this source is appropriate for auditability: all participant wording and condition-specific counts remain in config, so localization or wording edits do not require code changes
+- Localization strategy (how language variants are swapped via config without code edits): swap `config/*.yaml` files and keep `run_trial.py` text-agnostic except for key/value formatting placeholders
 
 ## 4. Response and Scoring Rules
 
-- Response mapping: left key selects the left symbol; right key selects the right symbol.
-- Response key source: config fields `task.response_key_left` and `task.response_key_right`.
-- If code-defined, why config-driven mapping is not sufficient: config-driven mapping is sufficient; code only needs to resolve the pair-specific left/right placement.
-- Missing-response policy: if no response is made before the response timeout, the trial is logged as a timeout and treated as non-winning on learning trials; on transfer trials it is excluded from preference metrics but still logged.
-- Correctness logic: on learning trials, the role with the higher win probability is correct; on transfer trials there is no correctness score because feedback is withheld.
+- Response mapping: `space` is the only work-phase response key
+- Response key source (config field vs code constant): config-defined via `task.key_list` / `task.response_key`
+- If code-defined, why config-driven mapping is not sufficient: not applicable
+- Missing-response policy: if a press window times out before quota completion, the trial ends without reward
+- Correctness logic:
+  - a trial is successful when the required number of space presses is completed within the allowed press windows
+  - individual press windows are counted as hits when `space` is pressed before timeout
 - Reward/penalty updates:
-  - correct learning responses increment a hidden cumulative score by 1
-  - incorrect or timed-out learning responses increment 0
-  - no negative penalty is shown to participants
+  - successful trials add `reward_tokens_per_completion` to the cumulative total
+  - failed trials add no reward
+  - no negative penalty is used
 - Running metrics:
-  - learning accuracy by pair and by block
-  - block criterion attainment
-  - transfer choice proportions, including A-choice and B-avoidance style indices
-  - response latency
-  - omission rate
+  - cumulative tokens
+  - completion rate
+  - mean completion latency
+  - timeout count
+  - satiety fraction
 
 ## 5. Stimulus Layout Plan
 
 For every screen with multiple simultaneous options/stimuli:
 
-- Screen name: instruction
+- Screen name: instruction screen
   - Stimulus IDs shown together: `instruction_text`
   - Layout anchors (`pos`): centered
-  - Size/spacing (`height`, width, wrap): height 28-32, `wrapWidth` around 980-1000
-  - Readability/overlap checks: single centered text block only
-  - Rationale: Chinese instructions should be easy to read before the first choice trial
-- Screen name: block ready
-  - Stimulus IDs shown together: `block_ready`
+  - Size/spacing (`height`, width, wrap): 28 px, wrap width 1000 px
+  - Readability/overlap checks: single text block, no overlap risk
+  - Rationale: a centered instruction block is easiest to read before the timing task starts
+
+- Screen name: work screen
+  - Stimulus IDs shown together: `work_prompt`, `work_counter`, `satiety_text`, `fixation`
+  - Layout anchors (`pos`): prompt near `y=120`, counter near `y=18`, satiety text near `y=-84`, fixation near center/lower center
+  - Size/spacing (`height`, width, wrap): prompt 30 px, counter 32 px, satiety 26 px, wrap width 800 to 1000 px
+  - Readability/overlap checks: text blocks are vertically separated; no debug labels are shown to participants
+  - Rationale: the participant needs a stable count of presses plus a visible satiety indicator
+
+- Screen name: reward screen
+  - Stimulus IDs shown together: `reward_token`, `reward_text`, `satiety_text`
+  - Layout anchors (`pos`): reward token centered at `y≈22`, reward text below at `y≈-118`, satiety text below that
+  - Size/spacing (`height`, width, wrap): token radius 42 px, text 30 px, wrap width 900 px
+  - Readability/overlap checks: token is visually distinct from the text block; text lines are stacked
+  - Rationale: reinforce the moment of reward delivery and show cumulative satiety
+
+- Screen name: block break / goodbye
+  - Stimulus IDs shown together: `block_break`, `good_bye`
   - Layout anchors (`pos`): centered
-  - Size/spacing (`height`, width, wrap): height 28-32, `wrapWidth` around 980
-  - Readability/overlap checks: single centered text block only
-  - Rationale: brief block transition screen keeps the phase structure visible
-- Screen name: learning choice / transfer choice
-  - Stimulus IDs shown together: left role symbol, right role symbol
-  - Layout anchors (`pos`): left symbol around `(-220, 0)`, right symbol around `(220, 0)`
-  - Size/spacing (`height`, width, wrap): symbol height around 180-200 px; no wrap
-  - Readability/overlap checks: two large kana symbols remain separated on a 1280 x 720 window
-  - Rationale: the pair must be easy to discriminate while keeping the left/right decision explicit
-- Screen name: feedback
-  - Stimulus IDs shown together: `feedback_correct` or `feedback_incorrect`
-  - Layout anchors (`pos`): centered
-  - Size/spacing (`height`, width, wrap): height 36-40, `wrapWidth` around 980
-  - Readability/overlap checks: one text block only
-  - Rationale: feedback should be legible and unambiguous
-- Screen name: ITI / fixation
-  - Stimulus IDs shown together: `iti_fixation`
-  - Layout anchors (`pos`): centered
-  - Size/spacing (`height`, width, wrap): single symbol, no wrap
-  - Readability/overlap checks: neutral fixation prevents accidental overlap with the next pair
-  - Rationale: a simple fixation anchor is enough between trials
-- Screen name: goodbye
-  - Stimulus IDs shown together: `good_bye`
-  - Layout anchors (`pos`): centered
-  - Size/spacing (`height`, width, wrap): height 28-32, `wrapWidth` around 980
-  - Readability/overlap checks: single centered text block only
-  - Rationale: exit screen should be calm and easy to dismiss
+  - Size/spacing (`height`, width, wrap): 26 to 28 px, wrap width 980 px
+  - Readability/overlap checks: one block of text per screen
+  - Rationale: summary screens are informational and should remain uncluttered
 
 ## 6. Trigger Plan
 
-Map each phase/state to trigger code and semantics.
-
-| Phase/State | Trigger | Semantics |
-|---|---:|---|
-| `instructions` | none | Instruction screen is shown before the task begins. |
-| `exp_onset` | `1` | Experiment begins. |
-| `block_onset` | `10` | A learning or transfer block begins. |
-| `block_end` | `11` | A learning or transfer block ends. |
-| `trial_onset` | `20` | A choice trial begins. |
-| `response_onset` | `30` | Response window opens. |
-| `left_response` | `31` | The left key was pressed. |
-| `right_response` | `32` | The right key was pressed. |
-| `timeout` | `33` | The response window expired without a choice. |
-| `feedback_onset` | `40` | Learning feedback is shown. |
-| `no_feedback_onset` | `41` | Transfer trial shows no feedback. |
-| `iti_onset` | `50` | Inter-trial interval begins. |
-| `exp_end` | `2` | Experiment closes after the goodbye screen. |
+- `exp_onset`: experiment start
+- `exp_end`: experiment end
+- `block_onset`: each block start
+- `block_end`: each block end
+- `trial_onset`: first work-window onset in each trial
+- `press_onset`: each press window onset
+- `press_response`: every successful space press
+- `press_timeout`: press-window timeout
+- `reward_onset`: reward token screen onset
+- `satiation_onset`: satiety screen onset
+- `iti_onset`: ITI onset
 
 ## 7. Architecture Decisions (Auditability)
 
-- `main.py` runtime flow style: simple mode-aware single flow with explicit `human`, `qa`, and `sim` branches.
+- `main.py` runtime flow style (simple single flow / helper-heavy / why): simple block loop with a single task-specific helper for the repeated press windows
 - `utils.py` used? yes
-- If yes, exact purpose: phase-specific schedule generation, role randomization, criterion checks, and transfer-metric helpers.
-- Custom controller used? yes
-- If yes, why PsyFlow-native path is insufficient: the task needs exact pair counts, left/right balance, probabilistic feedback, and criterion-driven repetition before the transfer block.
+- If yes, exact purpose (adaptive controller / sequence generation / asset pool / other): fixed-ratio parsing, satiety math, and block summary helpers
+- Custom controller used? no
+- If yes, why PsyFlow-native path is insufficient: not applicable
 - Legacy/backward-compatibility fallback logic required? no
+- If yes, scope and removal plan: not applicable
 
 ## 8. Inference Log
 
 List any inferred decisions not directly specified by references:
 
-- Decision: the exact six Hiragana glyphs are centralized in config and randomized across the A-F roles.
-  - Why inference was required: the papers and manual specify the symbol class, but not the literal glyph identities in accessible text.
-  - Citation-supported rationale: the task logic depends on six Hiragana symbols with random role assignment, not on a fixed glyph identity.
-- Decision: response timeout is set to 4000 ms.
-  - Why inference was required: the open papers give the task structure and response-latency reporting but do not define a universal timeout for the non-scanner implementation.
-  - Citation-supported rationale: the timing is consistent with the open-access Parkinson's disease variant that used a 4 s stimulus window and with the need to keep QA/simulation bounded.
-- Decision: ITI is set to 1000 ms.
-  - Why inference was required: the manual gives feedback duration and block timing but does not spell out an inter-trial gap in the excerpted parameters.
-  - Citation-supported rationale: a 1 s ITI preserves the published short trial structure while keeping the block duration close to the software manual.
-- Decision: `max_learning_blocks=6`.
-  - Why inference was required: the literature says repeat until criteria are met, but a finite cap is needed for runtime safety and QA.
-  - Citation-supported rationale: the cap is a framework safeguard and does not change the criterion rule itself.
-- Decision: Chinese instruction copy and block/goodbye screens are localized framework text.
-  - Why inference was required: the papers do not prescribe the exact participant-facing language.
-  - Citation-supported rationale: the protocol specifies the task logic; language should remain editable in config.
+- Decision: map the task into three fixed-ratio conditions (`fr5`, `fr10`, `fr20`)
+  - Why inference was required: the queue title does not specify exact ratio values
+  - Citation-supported rationale: fixed-ratio pausing and reinforcement-schedule papers support the general structure, while effort-based food-reward papers support the satiety/motivation framing
+
+- Decision: use cumulative token accumulation as the satiety index
+  - Why inference was required: the exact satiety metric is not specified in the queue title
+  - Citation-supported rationale: food-reward and establishment-operation papers link reward value to motivational state, so a cumulative token index is a defensible operationalization
+
+- Decision: implement each required press as a separate press window inside the work phase
+  - Why inference was required: PsyFlow’s standard response capture is single-response oriented
+  - Citation-supported rationale: per-press windows preserve auditable RTs, QA/sim compatibility, and fixed-ratio completion timing
 
 ## Contract Note
 

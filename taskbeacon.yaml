@@ -1,13 +1,13 @@
-id: T000040
-slug: probabilistic-stimulus-selection
-title: Probabilistic Stimulus Selection Task
+id: T000041
+slug: fixed-ratio-satiation-schedule
+title: Fixed-ratio Satiation Schedule
 acquisition: behavior
 variant: baseline
 cognitive_domain:
+  - motivation
   - reward-processing
-  - reinforcement-learning
-  - decision-making
-  - reward-learning
+  - operant-conditioning
+  - effort-based-decision-making
 maturity: draft
 version:
   release_tag: v0.1.0-dev
